@@ -1,0 +1,44 @@
+img#logo{
+  height:30px;
+  margin-left:20px;
+}
+
+a.navbar-brand.navbar-link{
+  margin-top:-10px;
+}
+
+div.container{
+  text-align:center;
+  background:#100e0e;
+  padding:10px;
+  width:700px;
+}
+
+input{
+  float:left;
+  margin-left:40px;
+  width:400px;
+  background-color:#525252;
+  border-radius:7px;
+}
+
+input::placeholder{
+  float:left;
+  margin-left:30px;
+  width:400px;
+  background-color:#525252;
+}
+
+button.btn.btn-default{
+  float:left;
+  margin-left:10px;
+}
+
+div.table-responsive{
+  color:#000;
+}
+
+div.table-responsive{
+  background-color:#cbc0c0;
+}
+
