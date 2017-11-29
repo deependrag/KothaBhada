@@ -16,7 +16,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -72,7 +71,7 @@
 						<d:forEach items="${cu}" var="b">
 							<tr>
 								<td>${b.cid}</td>
-								<td>${b.fname}${b.lname}</td>
+								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
 							</tr>
@@ -84,65 +83,6 @@
 	</div>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-=======
-    <nav class="navbar navbar-default custom-header">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="#"> <img src="assets/img/Logowhite.png" id="logo"></a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav links">
-                    <li role="presentation"><a href="#">Home </a></li>
-                    <li role="presentation"><a href="#">Facilities </a></li>
-                    <li role="presentation"><a href="#"> FAQ</a></li>
-                    <li role="presentation"><a href="#" class="custom-navbar">Contact us</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="assets/img/avatar.PNG" class="dropdown-image"></a>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li role="presentation" class="active"><a href="./index.jsp">Logout </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div id="list">
-        <div class="container">
-            <input type="search" placeholder="Search">
-            <button class="btn btn-default" type="button">Search </button>
-            <a href="RegisterUser.jsp"><button class="btn btn-default" type="button">Add user </button></a>
-        </div>
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID </th>
-                            <th>Name </th>
-                            <th>Email </th>
-                            <th>Password </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <d:forEach items="${cu}" var="b" >
-                            <tr>
-                            <td>${b.cid}</td>
-                            <td>${b.name}</td>
-                            <td>${b.email} </td>
-                            <td>${b.pass} </td>
-                            </tr>
-                        </d:forEach>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
->>>>>>> 74cc19663df7286779bb5543dc7412ac0f248039
 </body>
 
 </html>

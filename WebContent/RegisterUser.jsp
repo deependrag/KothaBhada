@@ -14,11 +14,11 @@
   <label id="icon" for="name"><i class="icon-shield"></i></label>
   <input type="password" name="password" id="name" placeholder="Password" required/>
   <div class="gender">
-    <input type="radio" value="None" id="male" name="gender" checked/>
+    <input type="radio" value="Male" id="male" name="gender" checked/>
     <label for="male" class="radio" >Male</label>
-    <input type="radio" value="None" id="female" name="gender" />
+    <input type="radio" value="Female" id="female" name="gender" />
     <label for="female" class="radio">Female</label>
    </div> 
-   <a href="" class="button"><input type="submit" name="Register"/></a>
+   <a href="" class="button"><input type="submit" class="btn" value="Register"/></a>
   </form>
 </div>

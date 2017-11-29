@@ -51,7 +51,7 @@ public class Register extends HttpServlet {
 				Statement stat = cn.createStatement();
 				stat.executeUpdate(query);
 				request.setAttribute("success", "Successfully register");
-                                RequestDispatcher rd=request.getRequestDispatcher("/RegisterUser.jsp");
+                                RequestDispatcher rd=request.getRequestDispatcher("./DisplayClient");
                                 rd.forward(request,response);
 			}catch(Exception e){
 				out.println("Error: Submission Failed!!\n" + e.getMessage());

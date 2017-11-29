@@ -154,7 +154,7 @@ input[type=password]{
   margin-top: 20px;
 }
 
-a.button {
+a.button{
   font-size: 14px;
   font-weight: 600;
   color: white;
@@ -183,6 +183,12 @@ a.button:hover {
   -moz-box-shadow: none; 
   box-shadow: none;
   
+}
+
+input[type=submit] {
+	background:transparent;
+	border:none;
+	color:#fff;
 }
 
 
