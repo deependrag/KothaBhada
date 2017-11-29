@@ -31,10 +31,10 @@
     </nav>
     <div id="promo">
         <div class="container">
-            <form>
+            <form method="post" action="Login">
                 <h1>Login </h1>
-                <input class="form-control" type="email" placeholder="Email">
-                <input class="form-control" type="password" placeholder="Password">
+                <input class="form-control" type="email" placeholder="Email" name="email">
+                <input class="form-control" type="password" placeholder="Password" name="password">
                 <button class="btn btn-default" type="submit">Login</button>
             </form>
         </div>
