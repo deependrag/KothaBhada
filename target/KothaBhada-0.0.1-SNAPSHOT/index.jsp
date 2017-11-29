@@ -42,7 +42,7 @@
     <footer>
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
-                <h3> <img src="assets/img/Logo_02.png" id="logofooter"></h3>
+                <h3> <img src="assets/img/Logowhite.png" id="logofooter"></h3>
                 <p class="company-name">Kortha Bhada© 2017 </p>
             </div>
             <div class="col-md-4 col-sm-6 footer-contacts">

@@ -11,26 +11,17 @@ package com.kothabhada;
  */
 public class ClientDto {
 	private String cid;
-	private String fname;
-	private String mname;
-	private String lname;
+	private String name;
 	private String email;
 	private String pass;
+        private String gender;
 
 	public String getCid() {
 		return cid;
 	}
 
-	public String getFname() {
-		return fname;
-	}
-
-	public String getMname() {
-		return mname;
-	}
-
-	public String getlname() {
-		return lname;
+	public String getName() {
+		return name;
 	}
 
 	public String getEmail() {
@@ -40,21 +31,17 @@ public class ClientDto {
 	public String getPass() {
 		return pass;
 	}
+        
+        public String getGender() {
+		return gender;
+	}
 
 	public void setCid(String cid) {
 		this.cid = cid;
 	}
 
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public void setMname(String mname) {
-		this.mname = mname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setEmail(String email) {
@@ -65,4 +52,7 @@ public class ClientDto {
 		this.pass = pass;
 	}
 
+        public void setGender(String gender) {
+		this.gender = gender;
+	}
 }

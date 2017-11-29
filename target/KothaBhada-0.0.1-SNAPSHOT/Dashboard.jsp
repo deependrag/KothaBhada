@@ -8,22 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="assets/css/dashboardstyles.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default custom-header">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="#"> <img src="assets/img/logo.png" id="logo"></a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand navbar-link" href="#"> <img src="assets/img/Logowhite.png" id="logo"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active" role="presentation"><a href="#">Home </a></li>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav links">
+                    <li role="presentation"><a href="#">Home </a></li>
                     <li role="presentation"><a href="#">Facilities </a></li>
-                    <li role="presentation"><a href="#">FAQ </a></li>
-                    <li role="presentation"><a href="#">Contact us</a></li>
+                    <li role="presentation"><a href="#"> FAQ</a></li>
+                    <li role="presentation"><a href="#" class="custom-navbar">Contact us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="assets/img/avatar.PNG" class="dropdown-image"></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="presentation" class="active"><a href="./index.jsp">Logout </a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -32,7 +43,7 @@
         <div class="container">
             <input type="search" placeholder="Search">
             <button class="btn btn-default" type="button">Search </button>
-            <button class="btn btn-default" type="button" id="adduser">Add User</button>
+            <a href="RegisterUser.jsp"><button class="btn btn-default" type="button">Add user </button></a>
         </div>
         <div class="container">
             <div class="table-responsive">
@@ -41,21 +52,16 @@
                         <tr>
                             <th>ID </th>
                             <th>Name </th>
+                            <th>Email </th>
                             <th>Password </th>
-                            <th>Created </th>
-                            <th>Updated </th>
-                            <th>Actions </th>
                         </tr>
                     </thead>
                     <tbody>
                         <d:forEach items="${cu}" var="b" >
                             <tr>
                             <td>${b.cid}</td>
-                            <td>${b.fname} </td>
-                            <td>${b.mname} </td>
-                            <td>${b.lname} </td>
+                            <td>${b.name}</td>
                             <td>${b.email} </td>
-                            <td>${b.uname} </td>
                             <td>${b.pass} </td>
                             </tr>
                         </d:forEach>
