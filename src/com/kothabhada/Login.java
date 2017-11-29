@@ -56,7 +56,9 @@ public class Login extends HttpServlet {
 		
 			//ResultSet rs1=stment.executeQuery(sql1);
 			if(rs1.next()) {
-				out.println("Login Sucessful");
+				request.getSession().setAttribute("loggedInUser", username);
+				RequestDispatcher rd=request.getRequestDispatcher("/Dashboard.jsp");
+				rd.include(request,response);
 			}else {
 				out.println("Login failed");
 			}
