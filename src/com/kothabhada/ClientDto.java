@@ -10,73 +10,59 @@ package com.kothabhada;
  * @author Ranjan
  */
 public class ClientDto {
-        private String cid;
+	private String cid;
 	private String fname;
 	private String mname;
 	private String lname;
-        private String email;
-        private String uname;
-        private String pass;
-        
-        
+	private String email;
+	private String pass;
+
 	public String getCid() {
-        return cid;
-    }
-    public String getFname() {
-        return fname;
-    }
-    
-    public String getMname() {
-        return mname;
-    }
-    
-    public String getlname() {
-        return lname;
-    }
-    
+		return cid;
+	}
 
-    public String getEmail() {
-        return email;
-    }
-    public String getUname() {
-        return uname;
-    }
-    
-    public String getPass() {
-        return pass;
-    }
-	 
-    public void setCid(String cid) {
-        this.cid = cid;
-    }    
+	public String getFname() {
+		return fname;
+	}
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-    
-    public void setMname(String mname) {
-        this.mname = mname;
-    }
-    
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
+	public String getMname() {
+		return mname;
+	}
 
+	public String getlname() {
+		return lname;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-     public void setUname(String uname) {
-        this.uname = uname;
-    }
-     
-     public void setPass(String pass) {
-        this.pass = pass;
-    }
-     
-     
-   
+	public String getPass() {
+		return pass;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
 }
-
-

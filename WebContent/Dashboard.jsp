@@ -41,21 +41,16 @@
                         <tr>
                             <th>ID </th>
                             <th>Name </th>
+                            <th>Email </th>
                             <th>Password </th>
-                            <th>Created </th>
-                            <th>Updated </th>
-                            <th>Actions </th>
                         </tr>
                     </thead>
                     <tbody>
                         <d:forEach items="${cu}" var="b" >
                             <tr>
                             <td>${b.cid}</td>
-                            <td>${b.fname} </td>
-                            <td>${b.mname} </td>
-                            <td>${b.lname} </td>
+                            <td>${b.fname} ${b.lname}</td>
                             <td>${b.email} </td>
-                            <td>${b.uname} </td>
                             <td>${b.pass} </td>
                             </tr>
                         </d:forEach>

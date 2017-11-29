@@ -40,13 +40,13 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		String username=request.getParameter("email");
+		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		Connection cn=null;
 		PreparedStatement stment = null;
 		try{
 			cn=ConnectionManager.getConnection();
-                        String sql1="select Username,Password from client where Username='"+username+"' and Password='"+password+"'";
+                        String sql1="select Email,Password from client where Email='"+email+"' and Password='"+password+"'";
 			//String sql2="select Username,Password from admin where Username='"+username+"' and Password='"+password+"'";
 			Statement stat1=cn.createStatement();
 			//Statement stat2=cn.createStatement();
@@ -54,9 +54,10 @@ public class Login extends HttpServlet {
 		
 			//ResultSet rs1=stment.executeQuery(sql1);
 			if(rs1.next()) {
-				request.getSession().setAttribute("loggedInUser", username);
-				RequestDispatcher rd=request.getRequestDispatcher("/Dashboard.jsp");
+				request.getSession().setAttribute("loggedInUser", email);
+				RequestDispatcher rd=request.getRequestDispatcher("./DisplayClient");
 				rd.include(request,response);
+				
 			}else {
 				out.println("Login failed");
 			}
