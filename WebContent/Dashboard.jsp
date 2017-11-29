@@ -30,7 +30,7 @@
         <div class="container">
             <input type="search" placeholder="Search">
             <button class="btn btn-default" type="button">Search </button>
-            <button class="btn btn-default" type="button" id="adduser">Add User</button>
+            <a href="RegisterUser.jsp"><button class="btn btn-default" type="button">Add user </button></a>
         </div>
         <div class="container">
             <div class="table-responsive">
