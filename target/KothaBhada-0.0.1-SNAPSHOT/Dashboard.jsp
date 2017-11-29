@@ -32,7 +32,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="assets/img/avatar.PNG" class="dropdown-image"></a>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li role="presentation" class="active"><a href="index.jsp">Logout </a></li>
+                            <li role="presentation" class="active"><a href="./index.jsp">Logout </a></li>
                         </ul>
                     </li>
                 </ul>
@@ -60,7 +60,7 @@
                         <d:forEach items="${cu}" var="b" >
                             <tr>
                             <td>${b.cid}</td>
-                            <td>${b.fname} ${b.lname}</td>
+                            <td>${b.name}</td>
                             <td>${b.email} </td>
                             <td>${b.pass} </td>
                             </tr>

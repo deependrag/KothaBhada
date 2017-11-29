@@ -46,9 +46,7 @@ public class DisplayClient extends HttpServlet {
 			while (rs.next()) {
 				ClientDto client = new ClientDto();
 				client.setCid(rs.getString("ClientId"));
-				client.setFname(rs.getString("FirstName"));
-				client.setMname(rs.getString("MiddleName"));
-				client.setLname(rs.getString("LastName"));
+				client.setName(rs.getString("Name"));
 				client.setEmail(rs.getString("Email"));
 				client.setPass(rs.getString("Password"));
 				clients.add(client);

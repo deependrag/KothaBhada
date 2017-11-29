@@ -5,8 +5,12 @@
  */
 package com.kothabhada;
 
+import Connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,15 +38,28 @@ public class Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String name=request.getParameter("name");
+            String gender=request.getParameter("gender");
+            String email=request.getParameter("email");
+            String pass=request.getParameter("password");
+            String query="insert into client(Name,Gender,Email,Password) values('"+name+"','"+gender+"','"+email+"','"+pass+"')";
+		Connection cn=null;
+		try{
+			
+			cn=ConnectionManager.getConnection();
+			try{
+				Statement stat = cn.createStatement();
+				stat.executeUpdate(query);
+				request.setAttribute("success", "Successfully register");
+                                RequestDispatcher rd=request.getRequestDispatcher("/RegisterUser.jsp");
+                                rd.forward(request,response);
+			}catch(Exception e){
+				out.println("Error: Submission Failed!!\n" + e.getMessage());
+			}
+
+		}catch(Exception e){
+			out.println("Connection Failed: \n" + e.getMessage());
+		}
         }
     }
 
