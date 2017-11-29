@@ -1,5 +1,6 @@
 package com.kothabhada;
 
+import Connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -41,14 +42,11 @@ public class Login extends HttpServlet {
 		response.setContentType("text/html");
 		String username=request.getParameter("email");
 		String password=request.getParameter("password");
-		String url="jdbc:mysql://localhost:3306/register";
-		String con="com.mysql.jdbc.Driver";
 		Connection cn=null;
 		PreparedStatement stment = null;
 		try{
-			Class.forName(con);
-			cn=DriverManager.getConnection(url,"root","");
-		    String sql1="select Username,Password from client where Username='"+username+"' and Password='"+password+"'";
+			cn=ConnectionManager.getConnection();
+                        String sql1="select Username,Password from client where Username='"+username+"' and Password='"+password+"'";
 			//String sql2="select Username,Password from admin where Username='"+username+"' and Password='"+password+"'";
 			Statement stat1=cn.createStatement();
 			//Statement stat2=cn.createStatement();

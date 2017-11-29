@@ -1,0 +1,56 @@
+a.navbar-brand.navbar-link{
+  margin-top:-10px;
+}
+
+img#logo{
+  height:30px;
+  margin-left:20px;
+}
+
+nav.navbar.navbar-default{
+  margin-bottom:0px;
+}
+
+h1{
+  text-align:center;
+  color:#fff;
+}
+
+input.form-control{
+  margin-top:10px;
+}
+
+button.btn.btn-default{
+  margin-top:10px;
+}
+
+div#promo{
+  background:url(../../assets/img/background.jpeg) no-repeat;
+  background-size:cover;
+  height:500px;
+}
+
+div.jumbotron{
+  width:250px;
+  height:250px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.5);
+  float:right;
+  margin-top:30px;
+}
+
+div.container{
+  width:250px;
+  height:250px;
+  background:rgba(19,26,34,0.5);
+  border-radius:20px;
+  text-align:center;
+  float:right;
+  margin:50px;
+  margin-top:100px;
+}
+
+img#logofooter{
+  width:200px;
+}
+
