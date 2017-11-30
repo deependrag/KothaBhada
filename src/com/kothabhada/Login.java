@@ -63,8 +63,9 @@ public class Login extends HttpServlet {
 				response.sendRedirect("./DisplayClient");
 
 			} else {
-				request.setAttribute("alertMsg", "Email or password incorrect");
-				request.getRequestDispatcher("./index.jsp").forward(request, response);
+				HttpSession session = request.getSession();
+				session.setAttribute("alertMsg", "Email or password incorrect");
+				response.sendRedirect("./index.jsp");
 			}
 
 			// ResultSet rs2=stat2.executeQuery(sql2);

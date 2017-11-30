@@ -48,7 +48,8 @@
 					<p class="alert-message warning">
 					<i class="ico fa fa-exclamation-circle"></i>    
 					${alertMsg}
-					</p>                 
+					</p> 
+                                        <c:remove var="alertMsg" scope="session" />
 					</c:if>
 
 				<button class="btn btn-default" type="submit">Login</button>
