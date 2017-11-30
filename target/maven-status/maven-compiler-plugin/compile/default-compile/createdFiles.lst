@@ -2,4 +2,5 @@ com\kothabhada\Register.class
 com\kothabhada\Login.class
 Connection\ConnectionManager.class
 com\kothabhada\ClientDto.class
+com\kothabhada\Edit.class
 com\kothabhada\DisplayClient.class
