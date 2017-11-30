@@ -5,8 +5,12 @@
  */
 package com.kothabhada;
 
+import Connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,8 +37,48 @@ public class Edit extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String r=request.getParameter("Id");
-            out.print(r);
+            String id=request.getParameter("id");
+            String name=request.getParameter("name");
+            String email=request.getParameter("email");
+            String password=request.getParameter("password");
+            
+            
+		Connection cn=null;
+		try{
+                    
+			cn=ConnectionManager.getConnection();
+			try{
+                                
+                                
+                                if(!name.equals(null)){
+                                String query="update client set Name='"+name+"' where ClientId='"+id+"'";
+				Statement stat = cn.createStatement();
+				stat.executeUpdate(query);
+                                }
+                                if(!email.equals(null)){
+                                String query="update client set Email='"+email+"' where ClientId='"+id+"'";
+				Statement stat = cn.createStatement();
+				stat.executeUpdate(query);
+                                }
+                                
+                                if(!password.equals(null)){
+                                String query="update client set Password='"+password+"' where ClientId='"+id+"'";
+				Statement stat = cn.createStatement();
+				stat.executeUpdate(query);
+                                }
+                                else{
+                                    request.setAttribute("alertMsg", "All the fields are Empty");
+				request.getRequestDispatcher("./Edit.jsp").forward(request, response);
+                                }
+                                out.println(" Sucessfully Updated\n" );
+			}catch(Exception e){
+				out.println("Error: Submission Failed!!\n" + e.getMessage());
+			}
+               
+
+		}catch(Exception e){
+			out.println("Connection Failed: \n" + e.getMessage());
+		}
            
         }
     }

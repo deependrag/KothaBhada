@@ -1,5 +1,6 @@
 <%@page import="Connection.ConnectionManager"%>
 <%@page import="java.sql.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link
 	href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600'
 	rel='stylesheet' type='text/css'>
@@ -35,7 +36,7 @@
 <div class="testbox">
 	<h1>Edit</h1>
 
-	<form action="Register" method="post">
+        <form action="Edit?id=<%= id %>" method="post">
 		<hr>
 		<label id="icon" for="name"><i class="icon-envelope "></i></label> <input
                     type="text" name="email" id="name" placeholder=<%= rs1.getString("Email") %> required /> <label
@@ -44,8 +45,13 @@
 			id="icon" for="name"><i class="icon-shield"></i></label> <input
 			type="password" name="password" id="name" placeholder=<%= rs1.getString("Password") %>
 			required />
-		
-		<a href="" class="button"><input type="submit" class="btn"
+                        <c:if test="${not empty alertMsg}">  
+					<p class="alert-message warning">
+					<i class="ico fa fa-exclamation-circle"></i>    
+					${alertMsg}
+					</p>                 
+					</c:if>
+                        <a href="" class="button"><input type="submit" class="btn"
 			value="Update" /></a>
 	</form>
 </div>
