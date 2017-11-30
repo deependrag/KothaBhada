@@ -75,9 +75,9 @@
 								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
-								<td><button class="btn btn-success" type="button">View</button>
-									<button class="btn btn-primary" type="button">Edit</button>
-									<button class="btn btn-danger" type="button">Delete</button></td>
+								<td><a href="View?Id=${b.cid}"><button class="btn btn-success" type="button">View</button></a>
+                                                                    <a href="Edit?Id=${b.cid}"><button class="btn btn-primary" type="button">Edit</button>
+                                                                    <a href="Delete?Id=${b.cid}"><button class="btn btn-danger" type="button">Delete</button></td>
 							</tr>
 						</d:forEach>
 					</tbody>
