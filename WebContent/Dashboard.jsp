@@ -30,7 +30,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav links">
-					<li role="presentation"><a href="#">Home </a></li>
+					<li role="presentation"><a href="index.jsp">Home </a></li>
 					<li role="presentation"><a href="#">Facilities </a></li>
 					<li role="presentation"><a href="#"> FAQ</a></li>
 					<li role="presentation"><a href="#" class="custom-navbar">Contact
@@ -69,7 +69,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<d:forEach items="${cu}" var="b">
+						<d:forEach items="${users_list}" var="b">
 							<tr>
 								<td>${b.cid}</td>
 								<td>${b.name}</td>

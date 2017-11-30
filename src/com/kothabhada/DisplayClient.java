@@ -33,8 +33,6 @@ public class DisplayClient extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.setContentType("text/html");
 		Connection cn = null;
 		try {
 
@@ -52,9 +50,10 @@ public class DisplayClient extends HttpServlet {
 				clients.add(client);
 			}
 
-			request.setAttribute("cu", clients);
-			request.getRequestDispatcher("./Dashboard.jsp").forward(request, response);
-			
+			request.getSession().setAttribute("users_list", clients);
+			//request.setAttribute("cu", clients);
+			//request.getRequestDispatcher("./Dashboard.jsp").forward(request, response);
+			response.sendRedirect("./Dashboard.jsp");
 
 		} catch (Exception e) {
 			System.out.println("Exception!!!" + e);

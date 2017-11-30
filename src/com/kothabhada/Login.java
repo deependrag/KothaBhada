@@ -54,9 +54,8 @@ public class Login extends HttpServlet {
 		
 			//ResultSet rs1=stment.executeQuery(sql1);
 			if(rs1.next()) {
-				request.getSession().setAttribute("loggedInUser", email);
-				RequestDispatcher rd=request.getRequestDispatcher("./DisplayClient");
-				rd.include(request,response);
+				request.getSession().setAttribute("loggedInUser", email);;
+				response.sendRedirect("./DisplayClient");
 				
 			}else {
 				request.setAttribute("alertMsg", "Email or password incorrect");
