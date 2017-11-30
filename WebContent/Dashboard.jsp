@@ -65,6 +65,7 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Password</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -74,6 +75,9 @@
 								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
+								<td><button class="btn btn-success" type="button">View</button>
+									<button class="btn btn-primary" type="button">Edit</button>
+									<button class="btn btn-danger" type="button">Delete</button></td>
 							</tr>
 						</d:forEach>
 					</tbody>

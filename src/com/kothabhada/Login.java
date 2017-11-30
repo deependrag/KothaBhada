@@ -59,7 +59,8 @@ public class Login extends HttpServlet {
 				rd.include(request,response);
 				
 			}else {
-				out.println("Login failed");
+				request.setAttribute("alertMsg", "Email or password incorrect");
+				request.getRequestDispatcher("./index.jsp").forward(request, response);
 			}
 			
 			
