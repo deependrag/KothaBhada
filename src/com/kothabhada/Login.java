@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,80 +18,81 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
 /**
  * Servlet implementation class Login
  */
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Login() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Login() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		Connection cn=null;
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		Connection cn = null;
 		PreparedStatement stment = null;
-		try{
-			cn=ConnectionManager.getConnection();
-                        String sql1="select Email,Password from client where Email='"+email+"' and Password='"+password+"'";
-			//String sql2="select Username,Password from admin where Username='"+username+"' and Password='"+password+"'";
-			Statement stat1=cn.createStatement();
-			//Statement stat2=cn.createStatement();
-			ResultSet rs1=stat1.executeQuery(sql1);
-		
-			//ResultSet rs1=stment.executeQuery(sql1);
-			if(rs1.next()) {
-				request.getSession().setAttribute("loggedInUser", email);;
+		try {
+			cn = ConnectionManager.getConnection();
+			String sql1 = "select Email,Password from client where Email='" + email + "' and Password='" + password
+					+ "'";
+			// String sql2="select Username,Password from admin where
+			// Username='"+username+"' and Password='"+password+"'";
+			Statement stat1 = cn.createStatement();
+			// Statement stat2=cn.createStatement();
+			ResultSet rs1 = stat1.executeQuery(sql1);
+
+			// ResultSet rs1=stment.executeQuery(sql1);
+			if (rs1.next()) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user_email", email);
 				response.sendRedirect("./DisplayClient");
-				
-			}else {
+
+			} else {
 				request.setAttribute("alertMsg", "Email or password incorrect");
 				request.getRequestDispatcher("./index.jsp").forward(request, response);
 			}
-			
-			
-			//ResultSet rs2=stat2.executeQuery(sql2);
-			
-			/*if(rs1.next()){
-					request.getSession().setAttribute("loggedInUser", username);
-					RequestDispatcher rd=request.getRequestDispatcher("/test.jsp");
-					rd.include(request,response);
-				}
-			else if(rs2.next()){
-					request.getSession().setAttribute("loggedInUser", username);
-					RequestDispatcher rd=request.getRequestDispatcher("/display.jsp");
-					rd.include(request,response);
-				}
-			else if(!rs1.next()&&!rs2.next()){
-					request.setAttribute("alertMsg", "Username or password incorrect");
-					RequestDispatcher rd=request.getRequestDispatcher("/Failure.jsp");
-					rd.include(request,response);
-			}*/
-				}catch(Exception e){
-					
-					out.println("Connection Failed: \n" + e.getMessage());
-				}
 
+			// ResultSet rs2=stat2.executeQuery(sql2);
+
+			/*
+			 * if(rs1.next()){ request.getSession().setAttribute("loggedInUser", username);
+			 * RequestDispatcher rd=request.getRequestDispatcher("/test.jsp");
+			 * rd.include(request,response); } else if(rs2.next()){
+			 * request.getSession().setAttribute("loggedInUser", username);
+			 * RequestDispatcher rd=request.getRequestDispatcher("/display.jsp");
+			 * rd.include(request,response); } else if(!rs1.next()&&!rs2.next()){
+			 * request.setAttribute("alertMsg", "Username or password incorrect");
+			 * RequestDispatcher rd=request.getRequestDispatcher("/Failure.jsp");
+			 * rd.include(request,response); }
+			 */
+		} catch (Exception e) {
+
+			out.println("Connection Failed: \n" + e.getMessage());
 		}
 
+	}
+
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -16,6 +16,14 @@
 </head>
 
 <body>
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store ,must-revalidate"); //HTTP 1.1
+		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+		response.setHeader("Expires", "0"); //Proxies
+		if (session.getAttribute("user_email") == null) {
+			response.sendRedirect("./index.jsp");
+		}
+	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -75,9 +83,11 @@
 								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
-								<td><a href="View?Id=${b.cid}"><button class="btn btn-success" type="button">View</button></a>
-                                                                    <a href="Edit?Id=${b.cid}"><button class="btn btn-primary" type="button">Edit</button>
-                                                                    <a href="Delete?Id=${b.cid}"><button class="btn btn-danger" type="button">Delete</button></td>
+								<td><a href="View?Id=${b.cid}"><button
+											class="btn btn-success" type="button">View</button></a> <a
+									href="Edit?Id=${b.cid}"><button class="btn btn-primary"
+											type="button">Edit</button> <a href="Delete?Id=${b.cid}"><button
+												class="btn btn-danger" type="button">Delete</button></td>
 							</tr>
 						</d:forEach>
 					</tbody>
