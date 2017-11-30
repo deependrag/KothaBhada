@@ -9,13 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-        <servlet-name>DisplayClient</servlet-name>
-        <servlet-class>com.kothabhada.DisplayClient</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DisplayClient</servlet-name>
-        <url-pattern>/DisplayClient</url-pattern>
-    </servlet-mapping>
+    <servlet-name>DisplayClient</servlet-name>
+    <servlet-class>com.kothabhada.DisplayClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayClient</servlet-name>
+    <url-pattern>/DisplayClient</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -42,7 +42,7 @@
 							class="caret"></span><img src="assets/img/avatar.PNG"
 							class="dropdown-image"></a>
 						<ul class="dropdown-menu dropdown-menu-right" role="menu">
-							<li role="presentation" class="active"><a href="#">Logout
+							<li role="presentation" class="active"><a href="./Logout">Logout
 							</a></li>
 						</ul></li>
 				</ul>
