@@ -83,10 +83,9 @@
 								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
-								<td><a href="View?Id=${b.cid}"><button class="btn btn-success" type="button">View</button></a>            
-                                                                    <a href="Edit.jsp?Id=${b.cid}"><button class="btn btn-primary" type="button">Edit</button> 
-                                                                    <a href="Delete?Id=${b.cid}"><button class="btn btn-danger" type="button">Delete</button></td>
-												
+								<td><button class="btn btn-success" type="button">View</button>
+								<button class="btn btn-primary" type="button" onclick="editUser(${b.cid})">Edit</button>
+								<button class="btn btn-danger" type="button" onclick="confirmDialog('${b.name}', ${b.cid})">Delete</button></td>
 							</tr>
 						</d:forEach>
 					</tbody>
@@ -95,6 +94,7 @@
 		</div>
 	</div>
 	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/dashboard.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 

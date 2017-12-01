@@ -18,7 +18,7 @@
 <div class="testbox">
 	<h1>Registration</h1>
 
-	<form action="Register" method="post">
+	<form action="./Register" method="post">
 		<hr>
 		<label id="icon" for="name"><i class="icon-envelope "></i></label> <input
 			type="text" name="email" id="name" placeholder="Email" required /> <label

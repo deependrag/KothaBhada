@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ranjan
  */
-@WebServlet(name = "Register", urlPatterns = { "/Register" })
-public class Register extends HttpServlet {
+@WebServlet(name = "UpdateUser", urlPatterns = { "/UpdateUser" })
+public class UpdateUser extends HttpServlet {
 
 	/**
 	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,18 +41,19 @@ public class Register extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
-			/* TODO output your page here. You may use following sample code. */
+			String id = request.getParameter("id");
 			String name = request.getParameter("name");
-			String gender = request.getParameter("gender");
 			String email = request.getParameter("email");
-			String pass = request.getParameter("password");
-			String query = "insert into client(Name,Gender,Email,Password) values('" + name + "','" + gender + "','"
-					+ email + "','" + pass + "')";
+			String password = request.getParameter("password");
+
 			Connection cn = null;
 			try {
 
 				cn = ConnectionManager.getConnection();
 				try {
+
+					String query = "update client set Name='" + name + "', Email='" + email + "',Password='" + password
+							+ "'  where ClientId='" + id + "'";
 					Statement stat = cn.createStatement();
 					stat.executeUpdate(query);
 					response.sendRedirect("./DisplayClient");
@@ -63,6 +64,7 @@ public class Register extends HttpServlet {
 			} catch (Exception e) {
 				out.println("Connection Failed: \n" + e.getMessage());
 			}
+
 		}
 	}
 
