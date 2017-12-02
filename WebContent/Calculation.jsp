@@ -36,7 +36,7 @@
                         <input type="text">
                     </div>
                     <div id="cdiv3"><span class="label label-default" id="lab5">Rate </span>
-                        <input type="text">
+                        <input type="number">
                     </div>
                 </div>
                 <hr>
