@@ -10,10 +10,6 @@ div#maindiv{
   margin:0px;
 }
 
-div#headdiv{
-  position:absolute;
-}
-
 div#content.container{
 }
 
@@ -122,5 +118,26 @@ div#pdiv2{
 div#pdiv{
   display:inline-block;
   width:100%;
+}
+
+img#logofooter {
+	width: 200px;
+}
+
+a.navbar-brand.navbar-link{
+  margin-top:-10px;
+}
+
+
+img#logo{
+  height:30px;
+  margin-left:20px;
+}
+footer#myfooter{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
 }
 

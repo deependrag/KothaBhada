@@ -56,7 +56,7 @@
 			</form>
 		</div>
 	</div>
-	<footer>
+	<footer id="myfooter">
 		<div class="row">
 			<div class="col-md-4 col-sm-6 footer-navigation">
 				<h3>

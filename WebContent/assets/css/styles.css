@@ -75,3 +75,11 @@ img#logofooter {
 	right: 10px;
 	cursor: pointer;
 }
+
+footer#myfooter{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}

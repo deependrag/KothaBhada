@@ -53,4 +53,12 @@ img#logo{
   margin-left:20px;
 }
 
+footer#myfooter{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}
+
 
