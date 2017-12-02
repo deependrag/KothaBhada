@@ -1,11 +1,13 @@
 com\kothabhada\Delete.class
 com\kothabhada\Login.class
 Connection\ConnectionManager.class
-com\kothabhada\Logout.class
-com\kothabhada\PayHistoryDto.class
 com\kothabhada\Register.class
 com\kothabhada\ClientDto.class
+com\kothabhada\DefineMonth.class
+com\kothabhada\DisplayClient.class
+com\kothabhada\CalculateRent.class
+com\kothabhada\Logout.class
+com\kothabhada\PayHistoryDto.class
 com\kothabhada\GetPaymentHistory.class
 com\kothabhada\UpdateUser.class
-com\kothabhada\DisplayClient.class
 com\kothabhada\GetUserData.class

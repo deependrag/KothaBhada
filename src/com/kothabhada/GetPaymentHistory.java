@@ -52,7 +52,7 @@ public class GetPaymentHistory extends HttpServlet {
 
 			con = ConnectionManager.getConnection();
 			Statement st = con.createStatement();
-			PreparedStatement pre1 = con.prepareStatement("select * from pamenthistory where ClientId=?");
+			PreparedStatement pre1 = con.prepareStatement("select * from paymenthistory where ClientId=?");
 
 			pre1.setString(1, id);
 			ResultSet rs1 = pre1.executeQuery();
