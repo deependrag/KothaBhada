@@ -41,17 +41,39 @@ div.jumbotron {
 
 div.container {
 	width: 250px;
-	height: 270px;
-	background: rgba(19, 26, 34, 0.5);
-	border-radius: 20px;
-	text-align: center;
-	float: right;
-	margin: 50px;
-	margin-top: 100px;
+    height: 330px;
+    background: rgba(19, 26, 34, 0.6);
+    border-radius: 20px;
+    text-align: center;
+    float: right;
+    margin: 50px;
+    padding: 30px;
 }
 
 img#logofooter {
 	width: 200px;
+}
+
+.btn{
+	background: rgba(19, 26, 34, 0.6);
+	color: #fff;
+	border-color:rgba(19, 26, 34, 0.6);
+	margin-top: 20px !important;
+}
+
+.btn:hover{
+	background: rgba(19, 26, 34, 0.8);
+	color: #fff;
+	border-color: #131a22;
+	box-shadow: 2px 2px 2px #131a22;
+}
+
+.btn:focus{
+	background: rgba(19, 26, 34, 0.8) !important;
+	color: #fff!important;
+	border-color: #131a22 !important;
+	box-shadow: 2px 2px 2px #131a22 !important;
+	outline-color: #131a22 !important;
 }
 
 /* -------------------------------------------------------------------------
@@ -76,10 +98,3 @@ img#logofooter {
 	cursor: pointer;
 }
 
-footer#myfooter{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow:hidden;
-}

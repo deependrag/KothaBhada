@@ -133,11 +133,10 @@ img#logo{
   height:30px;
   margin-left:20px;
 }
-footer#myfooter{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow:hidden;
-}
 
+#footer {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    width:100%;
+}
