@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -132,22 +133,16 @@
 							</tr>
 						</thead>
 						<tbody id="recentduebody">
+                                                    <d:forEach items="${view_payment_history}" var="b">
 							<tr>
-								<td>1</td>
-								<td>2017-05-03</td>
-								<td>Rent from JAN-MAR</td>
-								<td>5000</td>
-								<td>4500</td>
-								<td>3000</td>
+								<td>${b.refno}</td>
+                                                                <td>${b.date}</td>
+								<td>${b.month}</td>
+								<td>${b.topay}</td>
+								<td>${b.paid}</td>
+                                                                <td>${b.due}</td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>2016-5-13</td>
-								<td>Water from JAN-Mar</td>
-								<td>6000</td>
-								<td>5000</td>
-								<td>3000</td>
-							</tr>
+                                                    </d:forEach>
 						</tbody>
 					</table>
 				</div>
