@@ -10,3 +10,7 @@ function editUser(id){
 	document.location.href="./GetUserData?Id=" +id;
 }
 
+function viewInfo(){
+	document.location.href="./ViewInfo.jsp";
+}
+

@@ -1,0 +1,56 @@
+h3#name{
+  margin-left:30px;
+}
+
+button#monthlypayment.btn.btn-default{
+  margin-left:30px;
+}
+
+div#recentdue.table-responsive{
+  margin-top:10px;
+  border-radius:10px;
+}
+
+thead#recentduehead{
+  background-color:#c6c2c2;
+}
+
+tbody#recentduebody{
+  background-color:#ddd9d9;
+}
+
+span#labelfrommonth.label.label-default{
+  margin-left:10px;
+}
+
+select#selectfrommonth{
+}
+
+select.selectbox{
+  margin-left:10px;
+}
+
+button#search.btn.btn-default{
+  margin-left:10px;
+}
+
+div#paymenthistory.table-responsive{
+  margin-top:10px;
+  border-radius:10px;
+}
+
+img#logofooter {
+	width: 200px;
+}
+
+a.navbar-brand.navbar-link{
+  margin-top:-10px;
+}
+
+
+img#logo{
+  height:30px;
+  margin-left:20px;
+}
+
+

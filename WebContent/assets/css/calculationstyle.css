@@ -1,0 +1,126 @@
+div#tablecontainer.container{
+  background-color:#000;
+}
+
+div#maindiv{
+  background-color:#000;
+  width:100%;
+  padding:10px;
+  display:inline-block;
+  margin:0px;
+}
+
+div#headdiv{
+  position:absolute;
+}
+
+div#content.container{
+}
+
+div#seconddiv{
+  background-color:#a7a5a5;
+  padding-left:40px;
+  padding-right:40px;
+  padding-bottom:40px;
+}
+
+div#subdiv1{
+  padding-top:10px;
+}
+
+button#btn1.btn.btn-default{
+  background-color:#000;
+}
+
+button#btn2.btn.btn-default{
+  color:#fff;
+  background-color:#000;
+}
+
+button#btn1.btn.btn-primary{
+  width:200px;
+}
+
+button#btn2.btn.btn-primary{
+}
+
+span#lab1.label.label-default{
+  background-color:#a7a5a5;
+  color:#000;
+  font-size:15px;
+}
+
+span#lab2.label.label-default{
+  background-color:#a7a5a5;
+  color:#000;
+  font-size:13px;
+}
+
+span#lab3.label.label-default{
+  background-color:#a7a5a5;
+  color:#000;
+  font-size:13px;
+}
+
+div#subdiv2{
+  padding-bottom:10px;
+}
+
+div#subdiv3{
+}
+
+div#cdiv{
+  position:absolute;
+}
+
+div#cdiv{
+  position:relative;
+}
+
+div#cdiv2{
+  display:inline-block;
+}
+
+div#cdiv3{
+  display:inline-block;
+}
+
+div#cdiv1{
+  display:inline-block;
+}
+
+span#lab4.label.label-default{
+  background-color:#a7a5a5;
+  color:#000;
+  font-size:13px;
+  margin-right:16px;
+}
+
+span#lab5.label.label-default{
+  background-color:#a7a5a5;
+  color:#000;
+  font-size:13px;
+  margin-right:5px;
+}
+
+div#btndiv1{
+  float:left;
+}
+
+div#btndiv2{
+  float:right;
+}
+
+div#pdiv1{
+  float:left;
+}
+
+div#pdiv2{
+  float:right;
+}
+
+div#pdiv{
+  display:inline-block;
+  width:100%;
+}
+
