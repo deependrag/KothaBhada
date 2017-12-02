@@ -83,7 +83,7 @@
 								<td>${b.name}</td>
 								<td>${b.email}</td>
 								<td>${b.pass}</td>
-								<td><button class="btn btn-success" type="button" onclick="viewInfo()">View</button>
+								<td><button class="btn btn-success" type="button" onclick="viewInfo(${b.cid})">View</button>
 								<button class="btn btn-primary" type="button" onclick="editUser(${b.cid})">Edit</button>
 								<button class="btn btn-danger" type="button" onclick="confirmDialog('${b.name}', ${b.cid})">Delete</button></td>
 							</tr>
