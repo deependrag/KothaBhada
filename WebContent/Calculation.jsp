@@ -107,7 +107,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							type="text">
+							type="number">
 					</div>
 				</div>
 				<hr>
@@ -151,7 +151,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							type="text">
+							type="number">
 					</div>
 				</div>
 				<hr>
@@ -195,7 +195,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							type="text">
+							type="number">
 					</div>
 				</div>
 				<hr>
@@ -239,7 +239,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							type="text">
+							type="number">
 					</div>
 				</div>
 				<hr>
@@ -283,7 +283,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							type="text">
+							type="number">
 					</div>
 				</div>
 				<hr>
@@ -293,7 +293,7 @@
 							<span class="label label-default" id="lab2">Previous Due</span>
 						</div>
 						<div id="cdiv3">
-							<input type="text">
+							<input type="number">
 						</div>
 					</div>
 					<div id="pdiv2">
@@ -301,7 +301,7 @@
 							<span class="label label-default" id="lab2"> Total</span>
 						</div>
 						<div id="cdiv3">
-							<input type="text">
+							<input type="number">
 						</div>
 					</div>
 				</div>
@@ -312,7 +312,7 @@
 							<span class="label label-default" id="lab2">Paid </span>
 						</div>
 						<div id="cdiv3">
-							<input type="text">
+							<input type="number">
 						</div>
 					</div>
 					<div id="pdiv2">
@@ -320,7 +320,7 @@
 							<span class="label label-default" id="lab2"> Remaaning</span>
 						</div>
 						<div id="cdiv3">
-							<input type="text">
+							<input type="number">
 						</div>
 					</div>
 				</div>
