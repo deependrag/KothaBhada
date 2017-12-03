@@ -56,7 +56,10 @@
 			<h3 id="name">Name: Deependra Dhakal</h3>
 			<button class="btn btn-default" type="button" id="monthlypayment">Default
 				Monthly Payment</button>
-				<a href="./Calculation.jsp"> <button class="btn btn-default" type="button" id="paynow">Pay Now</button></a>
+			<a href="./Calculation.jsp">
+				<button class="btn btn-default" type="button" id="paynow">Pay
+					Now</button>
+			</a>
 			<div class="table-responsive" id="recentdue">
 				<table class="table">
 					<thead id="recentduehead">
@@ -133,16 +136,16 @@
 							</tr>
 						</thead>
 						<tbody id="recentduebody">
-                                                    <d:forEach items="${view_payment_history}" var="b">
-							<tr>
-								<td>${b.refno}</td>
-                                                                <td>${b.date}</td>
-								<td>${b.month}</td>
-								<td>${b.topay}</td>
-								<td>${b.paid}</td>
-                                                                <td>${b.due}</td>
-							</tr>
-                                                    </d:forEach>
+							<d:forEach items="${view_payment_history}" var="b">
+								<tr>
+									<td>${b.refno}</td>
+									<td>${b.date}</td>
+									<td>${b.month}</td>
+									<td>${b.topay}</td>
+									<td>${b.paid}</td>
+									<td>${b.due}</td>
+								</tr>
+							</d:forEach>
 						</tbody>
 					</table>
 				</div>

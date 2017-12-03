@@ -1,3 +1,7 @@
+body{
+	overflow: scroll;
+}
+
 h3#name{
   margin-left:30px;
 }
@@ -9,6 +13,7 @@ button#monthlypayment.btn.btn-default{
 div#recentdue.table-responsive{
   margin-top:10px;
   border-radius:10px;
+  overflow: auto;
 }
 
 thead#recentduehead{
@@ -37,6 +42,7 @@ button#search.btn.btn-default{
 div#paymenthistory.table-responsive{
   margin-top:10px;
   border-radius:10px;
+  overflow: auto;
 }
 
 img#logofooter {
@@ -53,12 +59,10 @@ img#logo{
   margin-left:20px;
 }
 
-footer#myfooter{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow:hidden;
+footer{
+	margin-top: 249px;
 }
+
+
 
 

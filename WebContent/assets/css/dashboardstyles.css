@@ -1,3 +1,6 @@
+body{
+	overflow: auto;
+}
 img#logo{
   height:30px;
   margin-left:20px;
@@ -40,17 +43,14 @@ div.table-responsive{
 
 div.table-responsive{
   background-color:#cbc0c0;
+  overflow: auto;
 }
 
 img#logofooter {
 	width: 200px;
 }
 
-footer#myfooter{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow:hidden;
+footer {
+    margin-top: 30px;
 }
 

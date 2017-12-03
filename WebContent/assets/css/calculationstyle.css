@@ -13,11 +13,12 @@ div#maindiv{
 div#content.container{
 }
 
-div#seconddiv{
-  background-color:#a7a5a5;
-  padding-left:40px;
-  padding-right:40px;
-  padding-bottom:40px;
+div#seconddiv {
+    background-color: #a7a5a5;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 div#subdiv1{
@@ -134,9 +135,6 @@ img#logo{
   margin-left:20px;
 }
 
-#footer {
-    bottom: 0;
-    left: 0;
-    position: relative;
-    width:100%;
+footer {
+    margin-top: 30px !important;
 }

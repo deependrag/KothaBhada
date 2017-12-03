@@ -327,7 +327,7 @@
 			</div>
 		</div>
 	</div>
-	<footer id="myfooter">
+	<footer>
 		<div class="row">
 			<div class="col-md-4 col-sm-6 footer-navigation">
 				<h3>
