@@ -140,3 +140,7 @@ img#logo{
     position: relative;
     width:100%;
 }
+
+input{
+    text-align: center;
+}

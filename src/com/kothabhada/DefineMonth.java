@@ -12,45 +12,37 @@ package com.kothabhada;
 
 
 public class DefineMonth {
-    static int r;
-    static int t;
     public static int getMonth(String m){
-        if(m.equals("JAN"))
-            return 1;
+        switch (m) {
+            case "JAN":
+                return 1;
+            case "FEB":
+                return 2;
+            case "MAR":
+                return 3;
+            case "APR":
+                return 4;
+            case "MAY":
+                return 5;
+            case "JUN":
+                return 6;
+            case "JUL":
+                return 7;
+            case "AUG":
+                return 8;
+            case "SET":
+                return 9;
+            case "OCT":
+                return 10;
+            case "NOV":
+                return 11;
+            case "DEC":
+                return 12;
+            default:
+                break;
+        }
+        return 0;
         
-        else if(m.equals("FEB"))
-            return 2;
-        
-        else if(m.equals("MAR"))
-            return 3;
-        
-        else if(m.equals("APR"))
-            return 4;
-        
-        else if(m.equals("MAY"))
-            return 5;
-        
-        else if(m.equals("JUN"))
-            return 6;
-        
-        else if(m.equals("JUL"))
-            return 7;
-        
-        else if(m.equals("AUG"))
-            return 8;
-        
-        else if(m.equals("SET"))
-            return 9;
-        
-        else if(m.equals("OCT"))
-            return 10;
-        
-        else if(m.equals("NOV"))
-            return 11;
-        
-        else if(m.equals("DEC"))
-            return 12;
-        
-      return 0;
+     
     }
 }
