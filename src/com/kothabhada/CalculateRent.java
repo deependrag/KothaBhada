@@ -72,6 +72,7 @@ public class CalculateRent extends HttpServlet {
             int itmonth = DefineMonth.getMonth(itomonth);
         
             
+            int total=Integer.parseInt(request.getParameter("total"));
             int rmonth = rtmonth-rfmonth;
             int emonth = etmonth-efmonth;
             int wmonth = wtmonth-wfmonth;
@@ -128,8 +129,11 @@ public class CalculateRent extends HttpServlet {
             
             int grandtotal = rtotal + etotal + wtotal + watotal + itotal;
             
-            out.print(grandtotal);
+            if(total== 0){
+                request.getSession().setAttribute("total", grandtotal);
+			response.sendRedirect("./Calculation.jsp");
             
+            }
         }
     }
 

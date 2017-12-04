@@ -4,7 +4,7 @@ div#tablecontainer.container{
 
 div#maindiv{
   background-color:#000;
-  width:100%;
+  width:85%;
   padding:10px;
   display:inline-block;
   margin:0px;
@@ -19,6 +19,7 @@ div#seconddiv {
     padding-right: 40px;
     padding-bottom: 40px;
     margin-bottom: 30px;
+    width: 85%;
 }
 
 div#subdiv1{
@@ -64,6 +65,7 @@ div#subdiv2{
 }
 
 div#subdiv3{
+    margin-bottom: 0px;
 }
 
 div#cdiv{
@@ -76,6 +78,7 @@ div#cdiv{
 
 div#cdiv2{
   display:inline-block;
+  margin-bottom: 2px;
 }
 
 div#cdiv3{
@@ -141,4 +144,14 @@ footer {
 
 input{
     text-align: center;
+}
+
+.hline{
+    margin-bottom: 1px;
+    margin-top: 5px;
+}
+
+.ninput{
+    width: 150px;
+    height: 20px;
 }
