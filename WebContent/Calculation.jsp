@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -315,9 +316,18 @@
 						<div id="subdiv2">
 							<span class="label label-default" id="lab2"> Total</span>
 						</div>
+                                            
+                                                 <d:if test="${empty total}">  
 						<div id="cdiv3">
-							<input class="ninput" type="number" placeholder="Rupees" name="total">
+							<input class="ninput" value="0" type="number" placeholder="Rupees" name="total">
 						</div>
+                                                </d:if>
+                                                <d:if test="${not empty total}">  
+                                                <div id="cdiv3">
+							<input class="ninput" value="${total}" type="number" placeholder="Rupees" name="total">
+						</div>
+                                                </d:if>
+                                               
 					</div>
 				</div>
 				<hr class="hline">
