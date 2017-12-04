@@ -17,6 +17,14 @@
 </head>
 
 <body>
+    <%
+		response.setHeader("Cache-Control", "no-cache, no-store ,must-revalidate"); //HTTP 1.1
+		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+		response.setHeader("Expires", "0"); //Proxies
+		if (session.getAttribute("user_email") == null) {
+			response.sendRedirect("./index.jsp");
+		}
+	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -52,13 +60,15 @@
 	</nav>
 	<div id="headdiv">
 		<div class="container" id="content">
+                    
+                    <form action="CalculateRent" method="post">
 			<div id="maindiv">
 				<div id="btndiv1">
 					<button class="btn btn-primary" type="button" id="btn1">Previous
 						rent history</button>
 				</div>
 				<div id="btndiv2">
-					<button class="btn btn-primary" type="button" id="btn2">Admin
+					<button class="btn btn-primary" type="submit" id="btn2">Calculate Total
 					</button>
 				</div>
 			</div>
@@ -67,13 +77,13 @@
 				<div id="subdiv1">
 					<span class="label label-default" id="lab1">Krishna Singh</span>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="subdiv2">
 					<span class="label label-default" id="lab2">Hotel Rent</span>
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select
+						<span class="label label-default" id="lab3">From </span> <select class="ninput"
 					name="rmonthfrom" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -90,7 +100,7 @@
 				</select>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select
+						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
 					name="rmonthto" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -107,17 +117,17 @@
 				</select>
 					</div>
 					<div id="cdiv3">
-						<span class="label label-default" id="lab5">Rate </span> <input
+						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
 							 name="rrate" type="number" placeholder="Rupees">
 					</div>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="subdiv2">
 					<span class="label label-default" id="lab2">Electricity </span>
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select
+						<span class="label label-default" id="lab3">From </span> <select class="ninput"
 					name="emonthfrom" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -134,7 +144,7 @@
 				</select>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select
+						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
 					name="emonthto" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -150,18 +160,22 @@
 					<option value="DEC">December</option>
 				</select>
 					</div>
+                                        <div id="cdiv3">
+						<span class="label label-default" id="lab5">Unit</span> <input class="ninput"	
+							name="unit" type="number" placeholder="Unit">
+					</div>
 					<div id="cdiv3">
-						<span class="label label-default" id="lab5">Rate </span> <input
+						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"	
 							name="erate" type="number" placeholder="Rupees">
 					</div>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="subdiv2">
 					<span class="label label-default" id="lab2">Water </span>
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select
+						<span class="label label-default" id="lab3">From </span> <select class="ninput"
 					name="wmonthfrom" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -178,7 +192,7 @@
 				</select>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select
+						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
 					name="wmonthto" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -195,17 +209,17 @@
 				</select>
 					</div>
 					<div id="cdiv3">
-						<span class="label label-default" id="lab5">Rate </span> <input
+						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
 							name="wrate" type="number" placeholder="Rupees">
 					</div>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="subdiv2">
 					<span class="label label-default" id="lab2">Wastage </span>
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select
+						<span class="label label-default" id="lab3">From </span> <select class="ninput"
 					name="wamonthfrom" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -222,7 +236,7 @@
 				</select>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select
+						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
 					name="wamonthto" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -239,17 +253,17 @@
 				</select>
 					</div>
 					<div id="cdiv3">
-						<span class="label label-default" id="lab5">Rate </span> <input
+						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
 							name="warate" type="number" placeholder="Rupees">
 					</div>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="subdiv2">
 					<span class="label label-default" id="lab2">Internet </span>
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select
+						<span class="label label-default" id="lab3">From </span> <select class="ninput"
 					name="imonthfrom" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -266,7 +280,7 @@
 				</select>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select
+						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
 					name="imonthto" class="selectbox">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
@@ -284,17 +298,17 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							name="irate" type="number" placeholder="Rupees">
+							class="ninput" name="irate" type="number" placeholder="Rupees">
 					</div>
-				</div>
-				<hr>
+                                </div>
+				<hr class="hline">
 				<div id="pdiv">
 					<div id="pdiv1">
 						<div id="subdiv2">
 							<span class="label label-default" id="lab2">Previous Due</span>
 						</div>
 						<div id="cdiv3">
-							<input type="number" placeholder="Rupees" name="prev">
+							<input class="ninput"type="number" placeholder="Rupees" name="prev">
 						</div>
 					</div>
 					<div id="pdiv2">
@@ -302,11 +316,11 @@
 							<span class="label label-default" id="lab2"> Total</span>
 						</div>
 						<div id="cdiv3">
-							<input type="number" placeholder="Rupees" name="total">
+							<input class="ninput" type="number" placeholder="Rupees" name="total">
 						</div>
 					</div>
 				</div>
-				<hr>
+				<hr class="hline">
 				<div id="pdiv">
 					<div id="pdiv1">
 						<div id="subdiv2">
@@ -316,25 +330,20 @@
 							<input type="number" placeholder="Rupees" name="paid">
 						</div>
 					</div>
-					<div id="pdiv2">
-						<div id="subdiv2">
-							<span class="label label-default" id="lab2"> Remaining</span>
-						</div>
-						<div id="cdiv3">
-							<input type="number" placeholder="Rupees" name="rem">
-						</div>
-					</div>
+					
 				</div>
-                                  <hr>  
+                                  <hr class="hline">  
                                 <div id="btndiv2">
                                     <button class="btn btn-primary" type="submit" id="btn2">Pay
 					</button>
                                 </div>
                                 
                             </form>
+                            
                            
                         </div>
-                    <hr>
+                    <hr class="hline">
+                    </form>
 		</div>
 	</div>
 	<footer>
