@@ -57,13 +57,13 @@
 		</div>
 	</nav>
 	<div class="container" id="formcontainer">
-		<form method="post" id="defaultpayment">
-			<label>Rent </label> <input class="form-control" type="number"
+            <form method="post" id="defaultpayment" action="DefaultPaymentAmount">
+			<label>Rent </label> <input class="form-control" name="rent" type="number"
 				placeholder="Rupees/Month"> <label>Electricity </label> <input
-				class="form-control" type="number" placeholder="Rupees/Unit">
-			<label>Wastes </label> <input class="form-control" type="number"
+				class="form-control" name="electricity" type="number" placeholder="Rupees/Unit">
+			<label>Wastes </label> <input class="form-control" name="wastes" type="number"
 				placeholder="Rupees/Month"> <label>Water </label> <input
-				class="form-control" type="number" placeholder="Rupees/Month">
+                                class="form-control" name="water" type="number" placeholder="Rupees/Month">
 			<label>Internet </label> <input class="form-control" type="number"
 				placeholder="Rupees/Month">
 			<button class="btn btn-default" type="submit" id="btnsave">Save
