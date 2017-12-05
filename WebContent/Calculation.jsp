@@ -337,7 +337,7 @@
 							<span class="label label-default" id="lab2">Paid </span>
 						</div>
 						<div id="cdiv3">
-							<input type="number" placeholder="Rupees" name="paid">
+							<input class="ninput" type="number" placeholder="Rupees" name="paid">
 						</div>
 					</div>
 					
