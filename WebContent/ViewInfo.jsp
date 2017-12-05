@@ -54,8 +54,7 @@
 	<div>
 		<div class="container">
 			<h3 id="name">Name: Deependra Dhakal</h3>
-			<a href="./DefaultPaymentAmount.jsp">
-			<button class="btn btn-default" type="button" id="monthlypayment">Default
+			<a href="./DefaultPaymentAmount"> <button class="btn btn-default" type="button" id="monthlypayment">Default
 				Monthly Payment</button>
 				</a>
 			<a href="./Calculation.jsp">

@@ -45,6 +45,7 @@ public class GetPaymentHistory extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
+		request.getSession().setAttribute("userid", request.getParameter("Id"));
 		try {
 			
 			String id = request.getParameter("Id");

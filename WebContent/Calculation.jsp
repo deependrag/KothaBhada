@@ -129,7 +129,7 @@
 				<div id="subdiv3">
 					<div id="cdiv1">
 						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="emonthfrom" class="selectbox">
+					name="emonthfrom">
 					<option value="JAN" selected="">Janaury</option>
 					<option value="FEB">Feburary</option>
 					<option value="MAR">March</option>
