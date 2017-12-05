@@ -13,4 +13,3 @@ function editUser(id) {
 function viewInfo(id) {
     document.location.href = "./GetPaymentHistory?Id=" + id;
 }
-

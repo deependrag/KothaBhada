@@ -1,0 +1,24 @@
+form#defaultpayment{
+  width:300px;
+}
+
+button#btnsave.btn.btn-default{
+  margin-top:20px;
+}
+
+img#logofooter {
+	width: 200px;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+body{
+	overflow: scroll;
+}
+
+img#logo{
+  height:30px;
+  margin-left:20px;
+}
