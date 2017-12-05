@@ -20,13 +20,13 @@
 		response.setHeader("Cache-Control", "no-cache, no-store ,must-revalidate"); //HTTP 1.1
 		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
 		response.setHeader("Expires", "0"); //Proxies
-		
+
 		if (session.getAttribute("user_email") == null) {
 			response.sendRedirect("./index.jsp");
 		}
 	%>
 	<%
-	DefaultPaymentDto defaultpayment = (DefaultPaymentDto) session.getAttribute("view_default_payment");
+		DefaultPaymentDto defaultpayment = (DefaultPaymentDto) session.getAttribute("view_default_payment");
 	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
@@ -62,22 +62,21 @@
 		</div>
 	</nav>
 	<div class="container" id="formcontainer">
-		<form method="post" id="defaultpayment" action="./InsertDefaultPaymentAmount">
+		<form method="post" id="defaultpayment"
+			action="./InsertDefaultPaymentAmount">
 			<label>Rent </label> <input class="form-control" type="number"
-				placeholder="Rupees/Month" name="rent" value="<%= defaultpayment.getRent() %>" > <label>Electricity </label> <input
-				class="form-control" type="number" name="electricity" placeholder="Rupees/Unit" value="<%= defaultpayment.getElectricity() %>" >
-			<label>Wastes </label> <input class="form-control" type="number"
-				placeholder="Rupees/Month" name="waste" value="<%= defaultpayment.getWaste() %>" > <label>Water </label> <input
-				class="form-control" type="number" name="water" placeholder="Rupees/Month" value="<%= defaultpayment.getWater() %>" >
-            <form method="post" id="defaultpayment" action="DefaultPaymentAmount">
-			<label>Rent </label> <input class="form-control" name="rent" type="number"
-				placeholder="Rupees/Month"> <label>Electricity </label> <input
-				class="form-control" name="electricity" type="number" placeholder="Rupees/Unit">
-			<label>Wastes </label> <input class="form-control" name="wastes" type="number"
-				placeholder="Rupees/Month"> <label>Water </label> <input
-                                class="form-control" name="water" type="number" placeholder="Rupees/Month">
+				placeholder="Rupees/Month" name="rent"
+				value="<%=defaultpayment.getRent()%>"> <label>Electricity
+			</label> <input class="form-control" type="number" name="electricity"
+				placeholder="Rupees/Unit"
+				value="<%=defaultpayment.getElectricity()%>"> <label>Wastes
+			</label> <input class="form-control" type="number" placeholder="Rupees/Month"
+				name="waste" value="<%=defaultpayment.getWaste()%>"> <label>Water
+			</label> <input class="form-control" type="number" name="water"
+				placeholder="Rupees/Month" value="<%=defaultpayment.getWater()%>">
 			<label>Internet </label> <input class="form-control" type="number"
-				placeholder="Rupees/Month" name="internet" value="<%= defaultpayment.getInternet() %>" >
+				placeholder="Rupees/Month" name="internet"
+				value="<%=defaultpayment.getInternet()%>">
 			<button class="btn btn-default" type="submit" id="btnsave">Save
 			</button>
 		</form>
