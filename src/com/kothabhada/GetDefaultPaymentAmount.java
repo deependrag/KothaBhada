@@ -64,11 +64,11 @@ public class GetDefaultPaymentAmount extends HttpServlet {
 			pre1.setString(1, id);
 			ResultSet rs1 = pre1.executeQuery();
 			while (rs1.next()) {
-				defaultpaymentDto.setRent(Integer.parseInt(rs1.getString("Rent")));
-				defaultpaymentDto.setWater(Integer.parseInt(rs1.getString("Water")));
-				defaultpaymentDto.setElectricity(Integer.parseInt(rs1.getString("Electricity")));
-				defaultpaymentDto.setWaste(Integer.parseInt(rs1.getString("Waste")));
-                                defaultpaymentDto.setInternet(Integer.parseInt(rs1.getString("Internet")));
+				defaultpaymentDto.setRent(rs1.getInt("Rent"));
+				defaultpaymentDto.setWater(rs1.getInt("Water"));
+				defaultpaymentDto.setElectricity(rs1.getInt("Electricity"));
+				defaultpaymentDto.setWaste(rs1.getInt("Waste"));
+                                defaultpaymentDto.setInternet(rs1.getInt("Internet"));
 			}
 		
 			request.getSession().setAttribute("default_values", defaultpaymentDto);
