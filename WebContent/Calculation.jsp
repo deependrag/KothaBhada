@@ -400,7 +400,7 @@
 							<span class="label label-default" id="lab2">Previous Due</span>
 						</div>
 						<div id="cdiv3">
-							<input class="ninput"type="number" placeholder="Rupees" name="prev">
+							<input class="ninput" value="${prev_due}" type="number" placeholder="Rupees" name="prev">
 						</div>
 					</div>
 					<div id="pdiv2">

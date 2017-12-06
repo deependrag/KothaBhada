@@ -174,7 +174,7 @@ public class CalculateRent extends HttpServlet {
 				try {
 					Statement stat = cn.createStatement();
 					stat.executeUpdate(query);
-					response.sendRedirect("./ViewInfo.jsp");
+					response.sendRedirect("./GetPaymentHistory?Id=" + id);
 				} catch (Exception e) {
 					out.println("Error: Submission Failed!!\n" + e.getMessage());
 				}
