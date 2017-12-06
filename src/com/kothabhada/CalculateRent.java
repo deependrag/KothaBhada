@@ -146,7 +146,7 @@ public class CalculateRent extends HttpServlet {
             
             int paid=Integer.parseInt(request.getParameter("paid"));
             if(paid == 0){
-                 request.getSession().setAttribute("rfrom", rfrommonth);
+                 request.getSession().setAttribute("rfrom", rfrommonth);        //use for sending data afer calculating total
                 request.getSession().setAttribute("efrom", efrommonth);
                 request.getSession().setAttribute("wfrom", wfrommonth);
                 request.getSession().setAttribute("wafrom", wafrommonth);
@@ -157,9 +157,8 @@ public class CalculateRent extends HttpServlet {
                 request.getSession().setAttribute("wato", watomonth);
                 request.getSession().setAttribute("ito", itomonth);
                 request.getSession().setAttribute("unit", unit);
-                request.getSession().setAttribute("total", grandtotal);
-                
-			response.sendRedirect("./Calculation.jsp");
+                request.getSession().setAttribute("total", grandtotal);                
+                response.sendRedirect("./Calculation.jsp");
             
             }
             
