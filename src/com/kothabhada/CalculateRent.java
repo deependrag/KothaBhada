@@ -158,7 +158,7 @@ public class CalculateRent extends HttpServlet {
                 request.getSession().setAttribute("ito", itomonth);
                 request.getSession().setAttribute("unit", unit);
                 request.getSession().setAttribute("total", grandtotal);                
-                response.sendRedirect("./Calculation.jsp");
+                response.sendRedirect("./GetDefaultPaymentAmount");
             
             }
             

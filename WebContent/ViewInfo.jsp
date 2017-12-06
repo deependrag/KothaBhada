@@ -72,7 +72,7 @@
 			<a href="./DefaultPaymentAmount">
 				<button class="btn btn-default" type="button" id="monthlypayment">Default
 					Monthly Payment</button>
-			</a> <a href="./Calculation.jsp">
+			</a> <a href="./GetDefaultPaymentAmount">
 				<button class="btn btn-default" type="button" id="paynow">Pay
 					Now</button>
 			</a>

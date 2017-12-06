@@ -1,3 +1,4 @@
+<%@page import="com.kothabhada.DefaultPaymentDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -22,14 +23,18 @@
 		response.setHeader("Cache-Control", "no-cache, no-store ,must-revalidate"); //HTTP 1.1
 		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
 		response.setHeader("Expires", "0"); //Proxies
-		
+		DefaultPaymentDto defaultpaymentDto = new DefaultPaymentDto();
 		if (session.getAttribute("user_role") == null) {
 			response.sendRedirect("./index.jsp");
 		}
 		if ( session.getAttribute("userid").equals("")){
 			response.sendRedirect("./DisplayClient");
 		}
-		
+		if(session.getAttribute("default_values") == null){
+				response.sendRedirect("./DisplayClient");
+		}else{
+				defaultpaymentDto = (DefaultPaymentDto) session.getAttribute("default_values");
+		}
 	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
@@ -140,7 +145,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
-							 name="rrate" type="number" placeholder="Rupees">
+							 value="<%=defaultpaymentDto.getRent()%>" name="rrate" type="number" placeholder="Rupees">
 					</div>
 				</div>
 				<hr class="hline">
@@ -205,7 +210,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"	
-							name="erate" type="number" placeholder="Rupees">
+							value="<%=defaultpaymentDto.getElectricity()%>" name="erate" type="number" placeholder="Rupees">
 					</div>
 				</div>
 				<hr class="hline">
@@ -265,7 +270,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
-							name="wrate" type="number" placeholder="Rupees">
+							value="<%=defaultpaymentDto.getWater() %>" name="wrate" type="number" placeholder="Rupees">
 					</div>
 				</div>
 				<hr class="hline">
@@ -325,7 +330,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
-							name="warate" type="number" placeholder="Rupees">
+							value="<%=defaultpaymentDto.getWaste() %>" name="warate" type="number" placeholder="Rupees">
 					</div>
 				</div>
 				<hr class="hline">
@@ -385,7 +390,7 @@
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
-							class="ninput" name="irate" type="number" placeholder="Rupees">
+							class="ninput" value="<%=defaultpaymentDto.getInternet() %>" name="irate" type="number" placeholder="Rupees">
 					</div>
                                 </div>
 				<hr class="hline">
