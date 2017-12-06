@@ -45,42 +45,37 @@ public class Login extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Connection cn = null;
-		PreparedStatement stment = null;
 		try {
 			cn = ConnectionManager.getConnection();
-			String sql1 = "select Email,Password from client where Email='" + email + "' and Password='" + password
-					+ "'";
-			// String sql2="select Username,Password from admin where
-			// Username='"+username+"' and Password='"+password+"'";
-			Statement stat1 = cn.createStatement();
-			// Statement stat2=cn.createStatement();
-			ResultSet rs1 = stat1.executeQuery(sql1);
-
-			// ResultSet rs1=stment.executeQuery(sql1);
-			if (rs1.next()) {
+			PreparedStatement usr = cn.prepareStatement("select Email,Password,ClientId from client where Email=? and Password=?");
+			PreparedStatement adm = cn.prepareStatement("select Email,Password from admin where Email=? and Password=?");
+				
+			usr.setString(1, email);
+			usr.setString(2, password);
+			
+			adm.setString(1, email);
+			adm.setString(2, password);
+			
+			ResultSet rs1 = usr.executeQuery();
+			ResultSet rs2 = adm.executeQuery();
+			
+			if (rs2.next()) {
 				HttpSession session = request.getSession();
-				session.setAttribute("user_email", email);
+				session.setAttribute("user_role", "admin");
 				response.sendRedirect("./DisplayClient");
 
+			}else if(rs1.next()) {
+				/*HttpSession session = request.getSession();
+				session.setAttribute("userid", rs1.getString("ClientId"));*/
+				HttpSession session = request.getSession();
+				session.setAttribute("user_role", "user");
+				response.sendRedirect("./GetPaymentHistory?Id=" + rs1.getString("ClientId"));
 			} else {
 				HttpSession session = request.getSession();
 				session.setAttribute("alertMsg", "Email or password incorrect");
 				response.sendRedirect("./index.jsp");
 			}
 
-			// ResultSet rs2=stat2.executeQuery(sql2);
-
-			/*
-			 * if(rs1.next()){ request.getSession().setAttribute("loggedInUser", username);
-			 * RequestDispatcher rd=request.getRequestDispatcher("/test.jsp");
-			 * rd.include(request,response); } else if(rs2.next()){
-			 * request.getSession().setAttribute("loggedInUser", username);
-			 * RequestDispatcher rd=request.getRequestDispatcher("/display.jsp");
-			 * rd.include(request,response); } else if(!rs1.next()&&!rs2.next()){
-			 * request.setAttribute("alertMsg", "Username or password incorrect");
-			 * RequestDispatcher rd=request.getRequestDispatcher("/Failure.jsp");
-			 * rd.include(request,response); }
-			 */
 		} catch (Exception e) {
 
 			out.println("Connection Failed: \n" + e.getMessage());

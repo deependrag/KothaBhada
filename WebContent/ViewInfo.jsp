@@ -18,6 +18,21 @@
 </head>
 
 <body>
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store ,must-revalidate"); //HTTP 1.1
+		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+		response.setHeader("Expires", "0"); //Proxies
+		
+		if (session.getAttribute("user_role") == null) {
+			response.sendRedirect("./index.jsp");
+		}else{
+			if (session.getAttribute("userid").equals("")) {
+				response.sendRedirect("./DisplayClient");
+			}
+		}
+		
+		
+	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -54,10 +69,10 @@
 	<div>
 		<div class="container">
 			<h3 id="name">Name: Deependra Dhakal</h3>
-			<a href="./DefaultPaymentAmount"> <button class="btn btn-default" type="button" id="monthlypayment">Default
-				Monthly Payment</button>
-				</a>
-			<a href="./Calculation.jsp">
+			<a href="./DefaultPaymentAmount">
+				<button class="btn btn-default" type="button" id="monthlypayment">Default
+					Monthly Payment</button>
+			</a> <a href="./Calculation.jsp">
 				<button class="btn btn-default" type="button" id="paynow">Pay
 					Now</button>
 			</a>

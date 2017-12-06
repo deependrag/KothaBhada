@@ -21,12 +21,20 @@
 		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
 		response.setHeader("Expires", "0"); //Proxies
 
-		if (session.getAttribute("user_email") == null) {
+		DefaultPaymentDto defaultpayment = new DefaultPaymentDto();
+		
+		if (session.getAttribute("user_role") == null) {
 			response.sendRedirect("./index.jsp");
+		}else{
+			if(session.getAttribute("view_default_payment") == null || session.getAttribute("userid").equals("")){
+				response.sendRedirect("./DisplayClient");
+			}else{
+				defaultpayment = (DefaultPaymentDto) session.getAttribute("view_default_payment");
+			}	
 		}
 	%>
 	<%
-		DefaultPaymentDto defaultpayment = (DefaultPaymentDto) session.getAttribute("view_default_payment");
+		
 	%>
 	<nav class="navbar navbar-default custom-header">
 		<div class="container-fluid">

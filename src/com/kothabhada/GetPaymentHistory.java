@@ -24,10 +24,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ranjan
  */
-@WebServlet(name = "GetPaymentHistory", urlPatterns = {"/GetPaymentHistory"})
+@WebServlet(name = "GetPaymentHistory", urlPatterns = { "/GetPaymentHistory" })
 public class GetPaymentHistory extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -47,7 +47,7 @@ public class GetPaymentHistory extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		request.getSession().setAttribute("userid", request.getParameter("Id"));
 		try {
-			
+
 			String id = request.getParameter("Id");
 			Connection con = null;
 
@@ -57,39 +57,41 @@ public class GetPaymentHistory extends HttpServlet {
 
 			pre1.setString(1, id);
 			ResultSet rs1 = pre1.executeQuery();
-                        List<PayHistoryDto> payhistoryDtos = new ArrayList<PayHistoryDto>();
+			List<PayHistoryDto> payhistoryDtos = new ArrayList<PayHistoryDto>();
 			while (rs1.next()) {
-                                PayHistoryDto payhistoryDto = new PayHistoryDto();
+				PayHistoryDto payhistoryDto = new PayHistoryDto();
 				payhistoryDto.setRefno(rs1.getString("RefNo"));
-                                payhistoryDto.setDate(rs1.getString("Date"));
+				payhistoryDto.setDate(rs1.getString("Date"));
 				payhistoryDto.setMonth(rs1.getString("Month"));
 				payhistoryDto.setTopay(rs1.getString("ToPay"));
 				payhistoryDto.setPaid(rs1.getString("Paid"));
-                                payhistoryDto.setDue(rs1.getString("Due"));
-                                payhistoryDtos.add(payhistoryDto);
+				payhistoryDto.setDue(rs1.getString("Due"));
+				payhistoryDtos.add(payhistoryDto);
 			}
-		
+
 			request.getSession().setAttribute("view_payment_history", payhistoryDtos);
 			response.sendRedirect("./ViewInfo.jsp");
-			
+
 		} catch (Exception e) {
 			out.println("Connection Failed: \n" + e.getMessage());
 		}
 	}
 
-
-
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
+	// + sign on the left to edit the code.">
+	/**
+	 * Handles the HTTP <code>GET</code> method.
+	 *
+	 * @param request
+	 *            servlet request
+	 * @param response
+	 *            servlet response
+	 * @throws ServletException
+	 *             if a servlet-specific error occurs
+	 * @throws IOException
+	 *             if an I/O error occurs
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
