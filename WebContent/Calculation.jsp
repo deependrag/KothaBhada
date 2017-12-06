@@ -89,38 +89,54 @@
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="rmonthfrom" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab3">From </span> 
+                                                <d:if test="${empty rfrom}">
+                                        <select class="ninput" name="rmonthfrom" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty rfrom}">
+                                                    <select class="ninput" name="rmonthfrom" class="selectbox">
+                                                        <option value="${rfrom}" selected="">${rfrom}</option>
+                                                    </select>
+                                                    <d:remove var="rfrom" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
-					name="rmonthto" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab4">TO </span> 
+                                                <d:if test="${empty rto}">
+                                        <select class="ninput" name="rmonthto" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty rto}">
+                                                    <select class="ninput" name="rmonthto" class="selectbox">
+                                                        <option value="${rto}" selected="">${rto}</option>
+                                                    </select>
+                                                    <d:remove var="rto" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
@@ -133,42 +149,59 @@
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="emonthfrom">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab3">From </span>
+                                                <d:if test="${empty efrom}">
+                                        <select class="ninput" name="emonthfrom" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty efrom}">
+                                                    <select class="ninput" name="emonthfrom" class="selectbox">
+                                                        <option value="${efrom}" selected="">${efrom}</option>
+                                                    </select>
+                                                    <d:remove var="efrom" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
-					name="emonthto" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab4">TO </span>
+                                                <d:if test="${empty eto}">
+                                        <select class="ninput" name="emonthto" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty eto}">
+                                                    <select class="ninput" name="emonthto" class="selectbox">
+                                                        <option value="${eto}" selected="">${eto}</option>
+                                                    </select>
+                                                    <d:remove var="eto" scope="session" />
+                                                </d:if>
 					</div>
                                         <div id="cdiv3">
 						<span class="label label-default" id="lab5">Unit</span> <input class="ninput"	
-							name="unit" type="number" placeholder="Unit">
+							name="unit" value="${unit}" type="number" placeholder="Unit">
+                                                <d:remove var="unit" scope="session" />
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"	
@@ -181,38 +214,54 @@
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="wmonthfrom" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab3">From </span>
+                                                <d:if test="${empty wfrom}">
+                                        <select class="ninput" name="wmonthfrom" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty wfrom}">
+                                                    <select class="ninput" name="wmonthfrom" class="selectbox">
+                                                        <option value="${wfrom}" selected="">${wfrom}</option>
+                                                    </select>
+                                                    <d:remove var="wfrom" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
-					name="wmonthto" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab4">TO </span> 
+                                                <d:if test="${empty wto}">
+                                        <select class="ninput" name="wmonthto" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty wto}">
+                                                    <select class="ninput" name="wmonthto" class="selectbox">
+                                                        <option value="${wto}" selected="">${wto}</option>
+                                                    </select>
+                                                    <d:remove var="wto" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
@@ -225,38 +274,54 @@
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="wamonthfrom" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab3">From </span> 
+                                                <d:if test="${empty wafrom}">
+                                        <select class="ninput" name="wamonthfrom" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty wafrom}">
+                                                    <select class="ninput" name="wamonthfrom" class="selectbox">
+                                                        <option value="${wafrom}" selected="">${wafrom}</option>
+                                                    </select>
+                                                    <d:remove var="wafrom" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
-					name="wamonthto" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab4">TO </span>
+                                               <d:if test="${empty wato}">
+                                        <select class="ninput" name="wamonthto" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty wato}">
+                                                    <select class="ninput" name="wamonthto" class="selectbox">
+                                                        <option value="${wato}" selected="">${wato}</option>
+                                                    </select>
+                                                    <d:remove var="wato" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"
@@ -269,38 +334,54 @@
 				</div>
 				<div id="subdiv3">
 					<div id="cdiv1">
-						<span class="label label-default" id="lab3">From </span> <select class="ninput"
-					name="imonthfrom" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab3">From </span> 
+                                                <d:if test="${empty ifrom}">
+                                        <select class="ninput" name="imonthfrom" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty ifrom}">
+                                                    <select class="ninput" name="imonthfrom" class="selectbox">
+                                                        <option value="${ifrom}" selected="">${ifrom}</option>
+                                                    </select>
+                                                 <d:remove var="ifrom" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv2">
-						<span class="label label-default" id="lab4">TO </span> <select class="ninput"
-					name="imonthto" class="selectbox">
-					<option value="JAN" selected="">Janaury</option>
-					<option value="FEB">Feburary</option>
-					<option value="MAR">March</option>
-					<option value="APR">April</option>
-					<option value="MAY">May</option>
-					<option value="JUN">June</option>
-					<option value="JUL">July</option>
-					<option value="AUG">August</option>
-					<option value="SEP">September</option>
-					<option value="AUG">October</option>
-					<option value="NOV">November</option>
-					<option value="DEC">December</option>
-				</select>
+						<span class="label label-default" id="lab4">TO </span> 
+                                               <d:if test="${empty ito}">
+                                        <select class="ninput" name="imonthto" class="selectbox">
+                                            <option value="Janaury" selected="">Janaury</option>
+                                           <option value="Feburary">Feburary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                                    </d:if>
+                                                <d:if test="${not empty ito}">
+                                                    <select class="ninput" name="imonthto" class="selectbox">
+                                                        <option value="${ito}" selected="">${ito}</option>
+                                                    </select>
+                                                    <d:remove var="ito" scope="session" />
+                                                </d:if>
 					</div>
 					<div id="cdiv3">
 						<span class="label label-default" id="lab5">Rate </span> <input
@@ -322,16 +403,12 @@
 							<span class="label label-default" id="lab2"> Total</span>
 						</div>
                                             
-                                                 <d:if test="${empty total}">  
-						<div id="cdiv3">
-							<input class="ninput" value="0" type="number" placeholder="Rupees" name="total">
-						</div>
-                                                </d:if>
-                                                <d:if test="${not empty total}">  
+                                               
                                                 <div id="cdiv3">
 							<input class="ninput" value="${total}" type="number" placeholder="Rupees" name="total">
+                                                        <d:remove var="total" scope="session" />
 						</div>
-                                                </d:if>
+                                                
                                                
 					</div>
 				</div>
@@ -342,7 +419,7 @@
 							<span class="label label-default" id="lab2">Paid </span>
 						</div>
 						<div id="cdiv3">
-							<input class="ninput" type="number" placeholder="Rupees" name="paid">
+							<input class="ninput" type="number" value="0" placeholder="Rupees" name="paid">
 						</div>
 					</div>
 					

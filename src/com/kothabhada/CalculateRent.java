@@ -41,18 +41,18 @@ public class CalculateRent extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String id = request.getSession().getAttribute("userid").toString();
-             out.print("helo");
+             
 
             String rfrommonth = request.getParameter("rmonthfrom");      //for house rent
             String rtomonth = request.getParameter("rmonthto");
             int rrate = Integer.parseInt(request.getParameter("rrate"));
-            
+           
             int rfmonth = DefineMonth.getMonth(rfrommonth);
             int rtmonth = DefineMonth.getMonth(rtomonth);
               
             String wfrommonth = request.getParameter("wmonthfrom");      //for water
             String wtomonth = request.getParameter("wmonthto");
-            int wrate = Integer.parseInt(request.getParameter("wrate")); 
+            int wrate = Integer.parseInt(request.getParameter("wrate"));  
             
             int wfmonth = DefineMonth.getMonth(wfrommonth);
             int wtmonth = DefineMonth.getMonth(wtomonth);
@@ -60,29 +60,29 @@ public class CalculateRent extends HttpServlet {
             String efrommonth = request.getParameter("emonthfrom");     //for electricity
             String etomonth = request.getParameter("emonthto");
             int erate = Integer.parseInt(request.getParameter("erate"));
-            int unit = Integer.parseInt(request.getParameter("unit"));
+            int unit = Integer.parseInt(request.getParameter("unit")); 
             
        
             
             String wafrommonth = request.getParameter("wamonthfrom");   //for wastage
             String watomonth = request.getParameter("wamonthto");
-            int warate = Integer.parseInt(request.getParameter("warate"));
-           
+            int warate = Integer.parseInt(request.getParameter("warate")); 
+           out.println(watomonth);
             int wafmonth = DefineMonth.getMonth(wafrommonth);
-          
+    
             int watmonth = DefineMonth.getMonth(watomonth);
-            
+            out.println("hello");
             String ifrommonth = request.getParameter("imonthfrom");       //for internet
-            String itomonth = request.getParameter("imonthto");
-            int irate = Integer.parseInt(request.getParameter("irate"));
+            String itomonth = request.getParameter("imonthto");out.println("hello");
+            int irate = Integer.parseInt(request.getParameter("irate")); 
             
             int ifmonth = DefineMonth.getMonth(ifrommonth);
             int itmonth = DefineMonth.getMonth(itomonth);
        
             int previousdue=Integer.parseInt(request.getParameter("prev"));
-            int total=Integer.parseInt(request.getParameter("total"));
             
-             out.print("helo");
+            
+             
             int rmonth = rtmonth-rfmonth;
             
             int wmonth = wtmonth-wfmonth;
@@ -133,25 +133,39 @@ public class CalculateRent extends HttpServlet {
                 itotal =imonth*irate;
             }
             
-           out.print("helo");
+           
             int grandtotal = rtotal + etotal + wtotal + watotal + itotal + previousdue; //totl amount to be paid
            
+            String monthf=ConvertMonth.convertMonth(rfrommonth);           //convert month in short form.
+            String montht=ConvertMonth.convertMonth(rtomonth); 
             
-            String month=rfrommonth + "-" + rtomonth;
+            String month=monthf + "-" + montht;
             Calendar c = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String formattedDate = df.format(c.getTime());
-            out.print("helo");
-            if(total== 0){
-                request.getSession().setAttribute("total", grandtotal);
+            
+            int paid=Integer.parseInt(request.getParameter("paid"));
+            if(paid == 0){
                  request.getSession().setAttribute("rfrom", rfrommonth);
+                request.getSession().setAttribute("efrom", efrommonth);
+                request.getSession().setAttribute("wfrom", wfrommonth);
+                request.getSession().setAttribute("wafrom", wafrommonth);
+                request.getSession().setAttribute("ifrom", ifrommonth);
+                request.getSession().setAttribute("rto", rtomonth);
+                request.getSession().setAttribute("eto", etomonth);
+                request.getSession().setAttribute("wto", wtomonth);
+                request.getSession().setAttribute("wato", watomonth);
+                request.getSession().setAttribute("ito", itomonth);
+                request.getSession().setAttribute("unit", unit);
+                request.getSession().setAttribute("total", grandtotal);
+                
 			response.sendRedirect("./Calculation.jsp");
             
             }
             
            else{
-                int paid=Integer.parseInt(request.getParameter("paid"));
-                int remaining= paid - grandtotal;                                //remaning due after payment
+               
+                int remaining= grandtotal - paid ;                                //remaning due after payment
                 String query = "insert into paymenthistory(ClientId,Date,Month,Topay,Paid,Due) values('" + id + "','" + formattedDate + "','"
 					+ month + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
 			Connection cn = null;

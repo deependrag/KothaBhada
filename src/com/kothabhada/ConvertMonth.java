@@ -9,40 +9,40 @@ package com.kothabhada;
  *
  * @author Ranjan
  */
-
-
-public class DefineMonth {
-    public static int getMonth(String m){
+public class ConvertMonth {
+    public static String convertMonth(String m){
         switch (m) {
             case "Janaury":              
-                return 1;
+                return "JAN";
             case "Feburary":
-                return 2;
+                return "FEB";
             case "March":
-                return 3;
+                return "MAR";
             case "April":
-                return 4;
+                return "APR";
             case "May":
-                return 5;
+                return "MAY";
             case "June":
-                return 6;
+                return "JUN";
             case "July":
-                return 7;
+                return "JUL";
             case "August":
-                return 8;
+                return "AUG";
             case "September":
-                return 9;
+                return "SEP";
             case "October":
-                return 10;
+                return "OCT";
             case "November":
-                return 11;
+                return "NOV";
             case "December":
-                return 12;
+                return "DEC";
             default:
                 break;
         }
-        return 0;
+        return null;
         
      
     }
 }
+
+
