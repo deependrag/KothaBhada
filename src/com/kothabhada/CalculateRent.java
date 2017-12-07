@@ -143,9 +143,9 @@ public class CalculateRent extends HttpServlet {
             Calendar c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String formattedDate = df.format(c.getTime());
+            String r=request.getParameter("test");
             
-            int paid=Integer.parseInt(request.getParameter("paid"));
-            if(paid == 0){
+            if(r.equals("c")){
                  request.getSession().setAttribute("rfrom", rfrommonth);        //use for sending data afer calculating total
                 request.getSession().setAttribute("efrom", efrommonth);
                 request.getSession().setAttribute("wfrom", wfrommonth);
@@ -162,8 +162,8 @@ public class CalculateRent extends HttpServlet {
             
             }
             
-           else{
-               
+            else if(r.equals("p")){
+               int paid=Integer.parseInt(request.getParameter("paid"));
                 int remaining= grandtotal - paid ;                                //remaning due after payment
                 String query = "insert into paymenthistory(ClientId,Date,Month,Topay,Paid,Due) values('" + id + "','" + formattedDate + "','"
 					+ month + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
@@ -174,7 +174,7 @@ public class CalculateRent extends HttpServlet {
 				try {
 					Statement stat = cn.createStatement();
 					stat.executeUpdate(query);
-					response.sendRedirect("./ViewInfo.jsp");
+					response.sendRedirect("./GetPaymentHistory?Id=" + id);
 				} catch (Exception e) {
 					out.println("Error: Submission Failed!!\n" + e.getMessage());
 				}

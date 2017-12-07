@@ -79,7 +79,7 @@
 						rent history</button>
 				</div>
 				<div id="btndiv2">
-					<button class="btn btn-primary" type="submit" id="btn2">Calculate Total
+					<button class="btn btn-primary" type="submit" id="btn2" name="test" value="c">Calculate Total
 					</button>
 				</div>
 			</div>
@@ -400,7 +400,7 @@
 							<span class="label label-default" id="lab2">Previous Due</span>
 						</div>
 						<div id="cdiv3">
-							<input class="ninput"type="number" placeholder="Rupees" name="prev">
+							<input class="ninput" value="${prev_due}" type="number" placeholder="Rupees" name="prev">
 						</div>
 					</div>
 					<div id="pdiv2">
@@ -424,14 +424,14 @@
 							<span class="label label-default" id="lab2">Paid </span>
 						</div>
 						<div id="cdiv3">
-							<input class="ninput" type="number" value="0" placeholder="Rupees" name="paid">
+							<input class="ninput" type="number" placeholder="Rupees" name="paid">
 						</div>
 					</div>
 					
 				</div>
                                   <hr class="hline">  
                                 <div id="btndiv2">
-                                    <button class="btn btn-primary" type="submit" id="btn2">Pay
+                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="p">Pay
 					</button>
                                 </div>
                                 

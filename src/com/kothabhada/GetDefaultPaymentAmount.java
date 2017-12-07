@@ -72,7 +72,7 @@ public class GetDefaultPaymentAmount extends HttpServlet {
 			}
 		
 			request.getSession().setAttribute("default_values", defaultpaymentDto);
-			response.sendRedirect("./Calculation.jsp");
+			response.sendRedirect("./PreviousDue");
 			
 		} catch (Exception e) {
 			out.println("Connection Failed: \n" + e.getMessage());
