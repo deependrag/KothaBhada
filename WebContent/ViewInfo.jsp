@@ -145,10 +145,10 @@
 							<tr>
 								<th>RefNo</th>
 								<th>Payment Date</th>
-								<th>Month</th>
 								<th>Amount to pay</th>
 								<th>Amount Paid</th>
 								<th>Due</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody id="recentduebody">
@@ -156,10 +156,10 @@
 								<tr>
 									<td>${b.refno}</td>
 									<td>${b.date}</td>
-									<td>${b.month}</td>
 									<td>${b.topay}</td>
 									<td>${b.paid}</td>
 									<td>${b.due}</td>
+									<td><button class="btn btn-primary" type="button" onclick="viewDetails(${b.refno})">View</button></td>
 								</tr>
 							</d:forEach>
 						</tbody>
@@ -206,6 +206,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="assets/js/dashboard.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -62,8 +62,7 @@ public class GetPaymentHistory extends HttpServlet {
 				PayHistoryDto payhistoryDto = new PayHistoryDto();
 				payhistoryDto.setRefno(rs1.getString("RefNo"));
 				payhistoryDto.setDate(rs1.getString("Date"));
-				payhistoryDto.setMonth(rs1.getString("Month"));
-				payhistoryDto.setTopay(rs1.getString("ToPay"));
+				payhistoryDto.setTopay(rs1.getString("Total"));
 				payhistoryDto.setPaid(rs1.getString("Paid"));
 				payhistoryDto.setDue(rs1.getString("Due"));
 				payhistoryDtos.add(payhistoryDto);
