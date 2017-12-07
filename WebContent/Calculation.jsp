@@ -205,12 +205,12 @@
 					</div>
                                         <div id="cdiv3">
 						<span class="label label-default" id="lab5">Unit</span> <input class="ninput"	
-							name="unit" value="${unit}" type="number" placeholder="Unit">
-                                                <d:remove var="unit" scope="session" />
+							name="unit" value="${unit}" type="number" placeholder="Unit" required>
+                                                <d:remove var="unit" scope="session"  />
 					</div>
 					<div id="cdiv3">
-						<span class="label label-default" id="lab5">Rate </span> <input class="ninput"	
-							value="<%=defaultpaymentDto.getElectricity()%>" name="erate" type="number" placeholder="Rupees">
+						<span class="label label-default" id="lab5">Rate </span> <input  class="ninput"	
+							value="<%=defaultpaymentDto.getElectricity()%>"  name="erate" type="number" placeholder="Rupees" required>
 					</div>
 				</div>
 				<hr class="hline">
@@ -412,6 +412,7 @@
                                                 <div id="cdiv3">
 							<input class="ninput" value="${total}" type="number" placeholder="Rupees" name="total">
                                                         <d:remove var="total" scope="session" />
+                                                            
 						</div>
                                                 
                                                
@@ -423,18 +424,32 @@
 						<div id="subdiv2">
 							<span class="label label-default" id="lab2">Paid </span>
 						</div>
-						<div id="cdiv3">
-							<input class="ninput" type="number" placeholder="Rupees" name="paid">
-						</div>
+                                                <div id="cdiv3">
+                                                <d:choose>
+                                                    <d:when test="${empty total}">
+							<input class="ninput" type="number" placeholder="Rupees" name="paid"/>
+                                                    </d:when>
+                                                    <d:otherwise>
+							<input class="ninput" type="number" placeholder="Rupees" name="paid" required/>
+                                                    </d:otherwise>
+                                                </d:choose>
+                                                
+                                                </div>
 					</div>
 					
 				</div>
-                                  <hr class="hline">  
-                                <div id="btndiv2">
-                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="p">Pay
-					</button>
+                                  <hr class="hline"> 
+                                 <div id="btndiv2">
+                                <d:choose>
+                                    <d:when test="${not empty total}">                                 
+                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="p">Pay</button>                                   
+                                </d:when>
+                                    <d:otherwise>                                    
+                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="c">Pay</button>                                    
+                                    </d:otherwise>
+                                        </d:choose>
+                                 
                                 </div>
-                                
                             </form>
                             
                            

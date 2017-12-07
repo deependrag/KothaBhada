@@ -1,0 +1,19 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   WebContent/Calculation.jsp
+#	modified:   src/com/kothabhada/CalculateRent.java
+#	modified:   target/KothaBhada-0.0.1-SNAPSHOT.war
+#	modified:   target/classes/Connection/ConnectionManager.class
+#	modified:   target/classes/com/kothabhada/ClientDto.class
+#	modified:   target/classes/com/kothabhada/DisplayClient.class
+#	modified:   target/classes/com/kothabhada/Login.class
+#	modified:   target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+#	modified:   target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+#	deleted:    target/test-classes/.netbeans_automatic_build
+#
+

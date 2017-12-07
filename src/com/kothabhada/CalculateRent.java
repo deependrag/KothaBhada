@@ -144,7 +144,7 @@ public class CalculateRent extends HttpServlet {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String formattedDate = df.format(c.getTime());
             String r=request.getParameter("test");
-            
+            String gtotal=Integer.toString(grandtotal);
             if(r.equals("c")){
                  request.getSession().setAttribute("rfrom", rfrommonth);        //use for sending data afer calculating total
                 request.getSession().setAttribute("efrom", efrommonth);
@@ -157,7 +157,7 @@ public class CalculateRent extends HttpServlet {
                 request.getSession().setAttribute("wato", watomonth);
                 request.getSession().setAttribute("ito", itomonth);
                 request.getSession().setAttribute("unit", unit);
-                request.getSession().setAttribute("total", grandtotal);                
+                request.getSession().setAttribute("total", gtotal);                
                 response.sendRedirect("./GetDefaultPaymentAmount");
             
             }

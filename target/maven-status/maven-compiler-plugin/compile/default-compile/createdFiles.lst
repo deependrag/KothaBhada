@@ -7,12 +7,15 @@ com\kothabhada\ClientDto.class
 com\kothabhada\DefineMonth.class
 com\kothabhada\DisplayClient.class
 com\kothabhada\InsertDefaultPaymentAmount.class
+com\kothabhada\PaymentDetails.class
 com\kothabhada\CalculateRent.class
 com\kothabhada\Logout.class
 com\kothabhada\PayHistoryDto.class
+com\kothabhada\PreviousDue.class
 com\kothabhada\ConvertMonth.class
 com\kothabhada\DefaultPaymentDto.class
 com\kothabhada\GetPaymentHistory.class
 com\kothabhada\UpdateUser.class
 com\kothabhada\GetUserData.class
+com\kothabhada\PaymentDetailsDto.class
 com\kothabhada\ViewDefaultPaymentAmount.class
