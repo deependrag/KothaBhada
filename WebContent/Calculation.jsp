@@ -411,7 +411,7 @@
                                                
                                                 <div id="cdiv3">
 							<input class="ninput" value="${total}" type="number" placeholder="Rupees" name="total">
-                                                        <d:remove var="total" scope="session" />
+                                                       
                                                             
 						</div>
                                                 
@@ -442,7 +442,8 @@
                                  <div id="btndiv2">
                                 <d:choose>
                                     <d:when test="${not empty total}">                                 
-                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="p">Pay</button>                                   
+                                    <button class="btn btn-primary" type="submit" id="btn2" name="test" value="p">Pay</button>   
+                                     <d:remove var="total" scope="session" />
                                 </d:when>
                                     <d:otherwise>                                    
                                     <button class="btn btn-primary" type="submit" id="btn2" name="test" value="c">Pay</button>                                    

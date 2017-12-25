@@ -165,8 +165,7 @@ public class CalculateRent extends HttpServlet {
             else if(r.equals("p")){
                int paid=Integer.parseInt(request.getParameter("paid"));
                 int remaining= grandtotal - paid ;                                //remaning due after payment
-                String query = "insert into paymenthistory(ClientId,Date,Month,Topay,Paid,Due) values('" + id + "','" + formattedDate + "','"
-					+ month + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
+                String query = "insert into paymenthistory(ClientId,Date,Total,Paid,Due) values('" + id + "','" + formattedDate + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
 			Connection cn = null;
 			
 
