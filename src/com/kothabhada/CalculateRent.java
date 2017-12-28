@@ -9,6 +9,8 @@ import Connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -136,10 +138,28 @@ public class CalculateRent extends HttpServlet {
            
             int grandtotal = rtotal + etotal + wtotal + watotal + itotal + previousdue; //totl amount to be paid
            
-            String monthf=ConvertMonth.convertMonth(rfrommonth);           //convert month in short form.
-            String montht=ConvertMonth.convertMonth(rtomonth); 
+            String rmonthf=ConvertMonth.convertMonth(rfrommonth);           //convert month in short form.
+            String rmontht=ConvertMonth.convertMonth(rtomonth); 
             
-            String month=monthf + "-" + montht;
+            String wmonthf=ConvertMonth.convertMonth(wfrommonth);           //convert month in short form.
+            String wmontht=ConvertMonth.convertMonth(wtomonth); 
+            
+            String wamonthf=ConvertMonth.convertMonth(wafrommonth);           //convert month in short form.
+            String wamontht=ConvertMonth.convertMonth(watomonth); 
+            
+            String emonthf=ConvertMonth.convertMonth(efrommonth);           //convert month in short form.
+            String emontht=ConvertMonth.convertMonth(etomonth); 
+            
+            String imonthf=ConvertMonth.convertMonth(ifrommonth);           //convert month in short form.
+            String imontht=ConvertMonth.convertMonth(itomonth); 
+            
+            String monthr=rmonthf + "-" + rmontht;
+            String monthw=wmonthf + "-" + wmontht;
+            String monthwa=wamonthf + "-" + wamontht;
+            String monthe=emonthf + "-" + emontht + " for Unit Reading:" + unit;
+            String monthi=imonthf + "-" + imontht;
+            
+            
             Calendar c = Calendar.getInstance();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String formattedDate = df.format(c.getTime());
@@ -165,15 +185,45 @@ public class CalculateRent extends HttpServlet {
             else if(r.equals("p")){
                int paid=Integer.parseInt(request.getParameter("paid"));
                 int remaining= grandtotal - paid ;                                //remaning due after payment
-                String query = "insert into paymenthistory(ClientId,Date,Total,Paid,Due) values('" + id + "','" + formattedDate + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
-			Connection cn = null;
-			
+                String query1 = "insert into paymenthistory(ClientId,Date,Total,Paid,Due) values('" + id + "','" + formattedDate + "','" + grandtotal + "','" + paid + "','" + remaining + "')";
+                    
+                Connection cn = null;
+		int refno;	
 
 				cn = ConnectionManager.getConnection();
 				try {
-					Statement stat = cn.createStatement();
-					stat.executeUpdate(query);
-					response.sendRedirect("./GetPaymentHistory?Id=" + id);
+                                        
+
+					Statement stat1 = cn.createStatement();
+					stat1.executeUpdate(query1);
+                                        
+                                        PreparedStatement usr = cn.prepareStatement("select RefNo from paymenthistory where ClientId=? and Date=?");
+                                        usr.setString(1, id);
+                                        usr.setString(2, formattedDate);
+                                        ResultSet rs1 = usr.executeQuery();
+                                        if(rs1.next()){
+                                            refno=rs1.getInt("RefNo");
+                                        
+                                        String query2 ="insert into receipt(Item,Month,Rate,Price,RefNo) value('Rent','" + monthr + "','" + rrate + "','" + rtotal + "','" + refno + "')";
+                                        String query3 = "insert into receipt(Item,Month,Rate,Price,RefNo) value('Water','" + monthw + "','" + wrate + "','" + wtotal + "','" + refno + "')";
+                                        String query4 = "insert into receipt(Item,Month,Rate,Price,RefNo) value('Waste','" + monthwa + "','" + warate + "','" + watotal + "','" + refno + "')";
+                                        String query5 = "insert into receipt(Item,Month,Rate,Price,RefNo) value('Electricity','" + monthe + "','" + erate + "','" + etotal + "','" + refno + "')";
+                                        String query6 = "insert into receipt(Item,Month,Rate,Price,RefNo) value('Internet','" + monthi + "','" + irate + "','" + itotal + "','" + refno + "')";
+                                        Statement stat2 = cn.createStatement();
+                                        stat2.executeUpdate(query2);
+                                        Statement stat3 = cn.createStatement();
+                                        stat3.executeUpdate(query3);
+                                        Statement stat4 = cn.createStatement();
+                                        stat4.executeUpdate(query4);        
+                                        Statement stat5 = cn.createStatement();
+                                        stat5.executeUpdate(query5);
+                                        Statement stat6 = cn.createStatement();
+                                        stat6.executeUpdate(query6);
+              
+					
+                                        }
+                                        response.sendRedirect("./GetPaymentHistory?Id=" + id);
+                                      
 				} catch (Exception e) {
 					out.println("Error: Submission Failed!!\n" + e.getMessage());
 				}
